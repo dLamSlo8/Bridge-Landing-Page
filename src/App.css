@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -26,6 +31,75 @@
 
 .App-link {
   color: #61dafb;
+}
+
+
+.navbar 
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 125px;
+}
+
+.nav-rest
+{
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-rest > *
+{
+  margin-right: 75px;
+}
+
+.nav-rest li:last-child
+{
+  margin-right: 0px;
+}
+
+.image 
+{
+   width: 14%;
+   min-width: 250px;
+}
+
+.join-button
+{
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-image: linear-gradient(to left, #9B7FE6, #661AB1);
+  transition: box-shadow 0.1s ease-in-out;
+
+}
+
+.join-button:hover
+{
+  /* -webkit-box-shadow: 10px 13px 17px 2px rgba(128,128,128,1);
+  -moz-box-shadow: 10px 13px 17px 2px rgba(128,128,128,1); */
+  box-shadow: 7px 4px 4px 0px #B8B8B8;
+}
+
+.mission-statement
+{
+  display: flex;
+  justify-content: center;
+}
+
+.big-text 
+{
+  font-size: 3rem;
+  
+}
+
+.bold-text
+{
+  font-weight: bold;
+}
+span.bigger-text
+{
+  font-size: 5rem;
 }
 
 @keyframes App-logo-spin {
