@@ -1,6 +1,7 @@
 import React from 'react';
 import "./App.css";
 import logo from "./static/logo.png";
+import head1 from "./static/head1.png";
 class HeaderNav extends React.Component<{}, {}> 
 {
 
@@ -32,6 +33,9 @@ class HeaderNav extends React.Component<{}, {}>
                             </span>
                         </p>
                     </div>
+                    
+                    <img src={head1} alt="" className="headImg1" />
+                    
                 </section>
             </div>
 
