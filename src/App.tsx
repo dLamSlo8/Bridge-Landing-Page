@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import Header from './HeaderNav';
+import HeaderNav from './HeaderNav';
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <div>
-      <Header>
-      </Header>
+      <HeaderNav>
+      </HeaderNav>
     </div>
   );
 }
