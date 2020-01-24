@@ -1,8 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
 * {
   font-family: 'Montserrat', sans-serif;
 }
+a {
+  text-decoration: none;
+}
+
+p {
+  font-weight: 500;
+  color: #6B6B6B;
+}
+
+h1 {
+  font-weight: 700;
+  color: #454545;
+}
+
 .App {
   text-align: center;
 }
@@ -41,6 +54,13 @@
   padding: 50px 125px;
 }
 
+.image 
+{
+   width: 14%;
+   min-width: 250px;
+   min-height: 60px;
+}
+
 .nav-rest
 {
   display: flex;
@@ -58,12 +78,6 @@
   margin-right: 0px;
 }
 
-.image 
-{
-   width: 14%;
-   min-width: 250px;
-   min-height: 60px;
-}
 
 .headImg1
 {
@@ -72,11 +86,11 @@
 .join-button
 {
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
-  background-image: linear-gradient(to left, #9B7FE6, #661AB1);
+  background-image: linear-gradient(to left, #9B7FE6,#661AB1);
   transition: box-shadow 0.1s ease-in-out;
-
+  white-space: nowrap;
 }
 
 .join-button:hover
@@ -91,6 +105,7 @@
   display: flex;
   justify-content: space-between;
   padding: 50px 125px;
+  flex-wrap: wrap;
 }
 
 .big-text 
@@ -108,6 +123,87 @@ span.bigger-text
   font-size: 5rem;
 }
 
+/* Join Us */
+.join-us-segment
+{
+  background-image: linear-gradient(to right, #8113AA, #786Ac7);
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 200px;
+}
+
+.join-us-segment .join-button
+{
+  padding: 15px 25px;
+  background-image: linear-gradient(to right, #6701B2, #9000FE);
+}
+
+.join-us-segment p, .join-us-segment h1, .whether-segment h1
+{
+  color: white;
+}
+
+.join-us-segment p
+{
+  font-size: 1.3rem;
+}
+.join-us-segment h1
+{
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+.d-flex
+{
+  display: flex;
+}
+
+.flex-column
+{
+  flex-direction: column;
+}
+
+.flex-center
+{
+  justify-content: center;
+}
+
+.flex-space-around
+{
+  justify-content: space-around;
+}
+
+.flex-cross-center
+{
+  align-items: center;
+}
+
+.flex-space-between
+{
+  justify-content: space-between;
+}
+
+.flex-wrap
+{
+  flex-wrap: wrap;
+}
+.text-center
+{
+  text-align: center;
+}
+
+.site-spacing
+{
+  padding: 50px 125px;
+}
+
+/* Whether you're a ... */
+.whether-segment
+{
+  background-color: #F5F5F5;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
