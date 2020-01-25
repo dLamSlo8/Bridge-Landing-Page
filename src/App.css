@@ -113,6 +113,10 @@ h1 {
 .big-text 
 {
   font-size: 3rem;
+<<<<<<< Updated upstream
+=======
+ 
+>>>>>>> Stashed changes
 }
 
 .bold-text
@@ -188,6 +192,11 @@ span.bigger-text
   justify-content: space-between;
 }
 
+.flex-space-evenly
+{
+  justify-content: space-evenly;
+}
+
 .flex-wrap
 {
   flex-wrap: wrap;
@@ -197,6 +206,10 @@ span.bigger-text
   text-align: center;
 }
 
+.flex-end
+{
+  justify-content: flex-end;
+}
 .site-spacing
 {
   padding: 50px 125px;

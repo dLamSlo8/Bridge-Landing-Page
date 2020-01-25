@@ -1,0 +1,130 @@
+.name-form
+{
+  display:flex;
+  padding-bottom: 12px
+}
+
+.info-form
+{
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.loc-form
+{
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.how-find-form
+{
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.name-form-items
+{
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.info-form-email
+{
+  flex-basis: 70%;
+  padding: 10px;
+}
+
+.info-form-provider
+{
+  flex-basis: 30%;
+  padding: 10px;
+  color: gray;
+}
+
+.loc-form-states
+{
+  flex-basis: 20%;
+  padding: 10px;
+  color: gray;
+}
+
+.loc-form-city
+{
+  flex-basis: 80%;
+  padding: 10px;
+  color: gray;
+}
+
+.how-find-form-dropmenu
+{
+  flex-basis: 100%;
+  padding: 10px;
+  color: gray;
+}
+
+.submit-button
+{
+  font-size: 13px;
+  padding: 12px;
+  border-radius: 13px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  background-image: linear-gradient(to left, #9B7FE6,#661AB1);
+  transition: box-shadow 0.1s ease-in-out;
+  white-space: nowrap;
+}
+
+.x-large-text
+{
+  font-size:28.5px; 
+}
+
+.bot-bar
+{
+  background-color: #460B8D;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding-left: 180px;
+  padding-right: 180px;
+}
+
+.contact-button
+{
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: white;
+  font-weight: 650;
+  font-size: 8px;
+  color: white;
+  background-image: #460B8D;
+  white-space: nowrap;
+}
+
+.login-button
+{
+  padding: 2px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: white;
+  font-weight: 700;
+  font-size: 8px;
+  color: white;
+  background-image: #460B8D;
+}
+
+.signed-up-text
+{
+  font-size: 8px;
+  font-weight: 500;
+  color: white;
+}
