@@ -23,7 +23,7 @@ class HeaderNav extends React.Component<{}, {}>
                     </ul>
                     <ul className="nav-rest flex-cross-center">
                         <li><a href="#">Log in</a></li>
-                        <li><a href="#" className="join-button">Join Bridge</a></li>
+                        <li className="join"><a href="#" className="join-button">Join Bridge</a></li>
                     </ul>
 
                 </nav>
