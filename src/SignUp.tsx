@@ -110,14 +110,14 @@ class HeaderNav extends React.Component<{}, {}>
                             </div>
                         </div>
                         <div className="d-flex flex-space-around">
-                            <img src={socials} alt="" style={{width:"25%", marginRight:"40px"}}/>                        
-                            <a href="#" className="contact-button" style={{alignSelf:"flex-start", marginTop:"30px", marginRight:"40px"}}>Contact Us</a>                            
+                            <img src={socials} alt="" style={{width:"25%", marginTop: "15px", marginRight:"40px"}}/>                        
+                            <a href="#" className="contact-button" style={{alignSelf:"flex-start", marginTop:"40px", marginRight:"40px"}}>Contact Us</a>                            
                             <div className="flex-column">
                             <p className="signed-up-text">
                                 Signed Up?
                             </p>
                             <a href="#" className="login-button" style={{alignSelf:"flex-start"}}>Log in</a>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
