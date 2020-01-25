@@ -212,3 +212,35 @@ span.bigger-text
     transform: rotate(360deg);
   }
 }
+
+.with-bridge
+{
+  display: flex;
+  list-style-type: none;
+  padding: 50px 75px;
+  justify-content: space-between;
+}
+
+h1.main1
+{
+  text-align: center;
+}
+
+p.submain1
+{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.intro 
+{
+  padding: 40px
+}
+
+.bar
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
