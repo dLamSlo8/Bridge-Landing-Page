@@ -28,9 +28,11 @@ class HeaderNav extends React.Component<{}, {}>
 
                 </nav>
                 <section className="mission-statement">
-                    <div style={{flexBasis: "40%"}}>
+                    <div 
+                    className="d-flex flex-cross-center"
+                    style={{flexBasis: "40%"}}>
                         <h1 className="big-text"
-                        style={{fontWeight: 500}}>
+                        style={{fontWeight: 500, marginTop: 0}}>
                             The fastest growing <br/>
                             <span className="bigger-text"
                             style={{fontWeight: 700}}>

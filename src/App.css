@@ -63,7 +63,7 @@ h1 {
 
 .nav-rest:last-child
 {
-  flex-basis: 17%;
+  flex-basis: 20%;
 }
 
 
@@ -103,7 +103,7 @@ h1 {
 {
   display: flex;
   justify-content: space-between;
-  padding: 50px 125px;
+  padding: 0px 125px;
 }
 
 .bigish-text
@@ -113,6 +113,7 @@ h1 {
 .big-text 
 {
   font-size: 3rem;
+ 
 }
 
 .bold-text
@@ -160,6 +161,8 @@ span.bigger-text
 
 .d-flex
 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
