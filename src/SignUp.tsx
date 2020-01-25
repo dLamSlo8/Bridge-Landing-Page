@@ -34,7 +34,7 @@ class HeaderNav extends React.Component<{}, {}>
     render() 
     {
         return (
-                <div>
+                <div style={{marginTop:"100px"}}>
                     <div className="d-flex flex-center" style={{marginBottom:"100px"}}>
                         <div style={{flexBasis:"30%", padding:"30px"}}>
                             <div>
@@ -118,7 +118,6 @@ class HeaderNav extends React.Component<{}, {}>
                             </p>
                             <a href="#" className="login-button" style={{alignSelf:"flex-start"}}>Log in</a>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

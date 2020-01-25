@@ -9,16 +9,14 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <div>
-<<<<<<< Updated upstream
       <HeaderNav>
       </HeaderNav>
-      <ValueProps />
+      <ValueProps>
+        </ValueProps>
       <Features>
       </Features>
-=======
       <SignUp>
       </SignUp>
->>>>>>> Stashed changes
     </div>
   );
 }
