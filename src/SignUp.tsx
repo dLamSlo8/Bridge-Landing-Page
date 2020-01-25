@@ -77,8 +77,8 @@ class HeaderNav extends React.Component<{}, {}>
                                 <span style={{display: "inline-block", paddingLeft: "15px"}}><a href="#" className="submit-button">Submit</a></span></p>
                             </div>
                         </div>
-                        <div style={{flexBasis:"30%"}} className="d-flex flex-center">
-                            <img src={s_phone} alt="" style={{width:"100%",height:"100%"}}/>
+                        <div style={{flexBasis:"30%"}} className="d-flex flex-cross-center">
+                            <img src={s_phone} alt="" style={{width:"80%"}}/>
                         </div>
                     </div>
                     <div className="bot-bar" style={{textAlign:"center"}}>
