@@ -13,28 +13,38 @@ class HeaderNav extends React.Component<{}, {}>
     {
         return (
             <div>
-                <nav className="navbar">
-                    <img src={logo} alt="" className="image" />
-                    <ul className="nav-rest">
-                        <li>Features</li>
-                        <li>Benefits</li>
-                        <li>Log in</li>
+                <nav className="navbar bg-grey">
+                    <div>
+                        <img src={logo} alt="" className="image" />
+                    </div>
+                    <ul className="nav-rest flex-cross-center">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Benefits</a></li>
+                    </ul>
+                    <ul className="nav-rest flex-cross-center">
+                        <li><a href="#">Log in</a></li>
                         <li><a href="#" className="join-button">Join Bridge</a></li>
                     </ul>
+
                 </nav>
                 <section className="mission-statement">
-                    <div>
-                        <p className="big-text bold-text">
+                    <div style={{flexBasis: "40%"}}>
+                        <h1 className="big-text"
+                        style={{fontWeight: 500}}>
                             The fastest growing <br/>
-                            <span className="bigger-text bold-text">
+                            <span className="bigger-text"
+                            style={{fontWeight: 700}}>
                                 network of <br/>
                                 mental health <br/>
                                 professionals.
                             </span>
-                        </p>
+                        </h1>
                     </div>
-                    
-                    <img src={head1} alt="" className="headImg1" />
+                    <div
+                    className="d-flex flex-cross-center"
+                    style={{flexBasis: "60%"}}>
+                        <img src={head1} alt="" className="headImg1" />
+                    </div>
                     
                 </section>
             </div>
