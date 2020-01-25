@@ -22,7 +22,8 @@ class ValueProps extends React.Component<{}, {}>
                         "LMHC",
                         "Psy.D",
                         "Ph.D"],
-            typeSpeed: 50,
+            typeSpeed: 100,
+            backSpeed: 50,
             loop: true,
             loopCount: Infinity
         });
@@ -43,7 +44,7 @@ class ValueProps extends React.Component<{}, {}>
             "are accepting new clients.",
             "Our referral generation tool will find you the best " + 
             "possible options based on a client's specific needs.",
-            "Receive appropriate referrals based on your " + 
+            "Receive appropriate referrals based on your " +
             "preferences, availability, and specialities."
         ]
 
