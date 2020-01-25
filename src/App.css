@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap');
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+p, li > a {
+  font-weight: 500;
+  color: #6B6B6B;
+}
+
+
+h1 {
+  font-weight: 700;
+  color: #454545;
+}
+
 .App {
   text-align: center;
 }
@@ -28,6 +48,188 @@
   color: #61dafb;
 }
 
+
+.navbar 
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 125px;
+}
+
+.navbar > *
+{
+  flex-basis: 25%;
+}
+
+.nav-rest:last-child
+{
+  flex-basis: 17%;
+}
+
+
+.image 
+{
+   width: 14%;
+   min-width: 250px;
+   min-height: 60px;
+}
+
+.nav-rest
+{
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.headImg1
+{
+  width: 100%;
+}
+.join-button
+{
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-image: linear-gradient(to left, #9B7FE6,#661AB1);
+  white-space: nowrap;
+  box-shadow: 7px 4px 4px 0px #B8B8B8;
+
+}
+
+
+.mission-statement
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 125px;
+}
+
+.bigish-text
+{
+  font-size: 2.5rem;
+}
+.big-text 
+{
+  font-size: 3rem;
+}
+
+.bold-text
+{
+  font-weight: bold;
+}
+span.bigger-text
+{
+  font-size: 4rem;
+}
+
+/* Join Us */
+.join-us-segment
+{
+  background-image: linear-gradient(to right, #8113AA, #786Ac7);
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 200px;
+}
+
+.join-us-segment .join-button
+{
+  padding: 15px 25px;
+  background-image: linear-gradient(to right, #6701B2, #9000FE);
+  box-shadow: 7px 4px 4px 0px #000000;
+  transition: all 0.5s ease-in-out;
+}
+
+.join-us-segment p, .join-us-segment h1
+{
+  color: white;
+}
+
+.join-us-segment p
+{
+  font-size: 1.3rem;
+}
+.join-us-segment h1
+{
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+.d-flex
+{
+  display: flex;
+}
+
+.flex-column
+{
+  flex-direction: column;
+}
+
+.flex-center
+{
+  justify-content: center;
+}
+
+.flex-space-around
+{
+  justify-content: space-around;
+}
+
+.flex-cross-center
+{
+  align-items: center;
+}
+
+.flex-space-between
+{
+  justify-content: space-between;
+}
+
+.flex-wrap
+{
+  flex-wrap: wrap;
+}
+.text-center
+{
+  text-align: center;
+}
+
+.site-spacing
+{
+  padding: 50px 125px;
+}
+
+/* Whether you're a ... */
+
+
+.bg-grey
+{
+  background-color: #F5F5F5;
+}
+
+.whether-segment h1.white
+{
+  color: white;
+}
+
+.card
+{
+  padding: 0px 10px;
+  border-radius: 20px;
+}
+
+.bg-purple-gradient
+{
+  background-image: linear-gradient(to right, #8113AA, #786Ac7);
+}
+
+.typed-cursor
+{
+  font-size: 2.5rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +237,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.with-bridge
+{
+  display: flex;
+  list-style-type: none;
+  padding: 50px 75px;
+  justify-content: space-around;
+}
+
+h1.main1
+{
+  text-align: center;
+}
+
+p.submain1
+{
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.intro 
+{
+  padding: 40px 150px;
+}
+
+.bar
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }

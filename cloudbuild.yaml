@@ -1,0 +1,12 @@
+steps:
+  #Install
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+  
+  #Build - note: doesn't actually do anything right now..
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+
+  #Deploy
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ['app', 'deploy']
