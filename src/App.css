@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap');
 * {
   font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
 }
 a {
   text-decoration: none;
@@ -12,7 +11,10 @@ p, li > a {
   color: #6B6B6B;
 }
 
-
+*.color-black
+{
+  color: black;
+}
 h1 {
   font-weight: 700;
   color: #454545;

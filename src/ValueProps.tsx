@@ -76,7 +76,8 @@ class ValueProps extends React.Component<{}, {}>
                     </div>
                     <div className="d-flex flex-cross-center">
                         <a 
-                        href="#" 
+                        data-scroll
+                        href="#signup" 
                         className="join-button"
                         style={{fontSize: "1.5rem"}}>Join us</a>
                     </div>
@@ -125,7 +126,8 @@ class ValueProps extends React.Component<{}, {}>
                         a modern, HIPAA-compliant platform.</h1>
                         <div className="d-flex flex-center">
                             <a 
-                            href="#" 
+                            data-scroll
+                            href="#signup" 
                             className="join-button"
                             style={{fontSize: "1.5rem"}}>Get started</a>
                         </div>
