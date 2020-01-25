@@ -13,14 +13,15 @@ class Features extends React.Component<{}, {}>
         return (
             <div>
                 <section className="start">
-                    <h1 className="intro">
+                    <h1 className="intro"
+                    style={{fontSize: "2em", fontWeight: 700}}>
                         With Bridge, <br/>
                     </h1>
                 </section>
                 <nav className="collab">
                     <ul className="with-bridge">
                         <li>
-                            <h1 className="main1">
+                            <h1 className="main1 bigish-text">
                             Feel collaborative <br/>
                             even in private <br/>
                             practice <br/><br/>
@@ -30,7 +31,7 @@ class Features extends React.Component<{}, {}>
                             </p>
                             </h1>
                         </li>
-                        <li><h1 className="main1">
+                        <li><h1 className="main1 bigish-text">
                             Save time on <br/>
                             accurate <br/>
                             referrals <br/><br/>
@@ -40,7 +41,7 @@ class Features extends React.Component<{}, {}>
                                 client in need. 
                             </p>
                             </h1></li>
-                        <li><h1 className="main1">
+                        <li><h1 className="main1 bigish-text">
                             Grow a stable, <br/>
                             healthy practice <br/><br/><br/>
                             <p className="submain1">
