@@ -34,7 +34,7 @@ class HeaderNav extends React.Component<{}, {}>
     render() 
     {
         return (
-                <div style={{marginTop:"100px"}}>
+                <div id="signup" style={{marginTop:"100px"}}>
                     <div className="d-flex flex-center" style={{marginBottom:"100px"}}>
                         <div style={{flexBasis:"30%", padding:"30px"}}>
                             <div>
