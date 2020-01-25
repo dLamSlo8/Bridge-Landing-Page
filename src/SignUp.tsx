@@ -78,7 +78,7 @@ class HeaderNav extends React.Component<{}, {}>
                             </div>
                         </div>
                         <div style={{flexBasis:"30%"}} className="d-flex flex-center">
-                            <img src={s_phone} alt="" style={{width:"100%"}}/>
+                            <img src={s_phone} alt="" style={{width:"100%",height:"100%"}}/>
                         </div>
                     </div>
                     <div className="bot-bar" style={{textAlign:"center"}}>
