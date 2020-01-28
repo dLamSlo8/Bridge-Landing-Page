@@ -11,7 +11,7 @@ class Features extends React.Component<{}, {}>
     render() 
     {
         return (
-            <div>
+            <div id="benefits">
                 <section className="start">
                     <h1 className="intro"
                     style={{fontSize: "2em", fontWeight: 700}}>

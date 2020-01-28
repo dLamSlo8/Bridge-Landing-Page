@@ -18,8 +18,8 @@ class HeaderNav extends React.Component<{}, {}>
                         <img src={logo} alt="" className="image" />
                     </div>
                     <ul className="nav-rest flex-cross-center">
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Benefits</a></li>
+                        <li><a data-scroll href="#features">Features</a></li> 
+                        <li><a data-scroll href="#benefits">Benefits</a></li>
                     </ul>
                     <ul className="nav-rest flex-cross-center">
                         <li><a href="#">Log in</a></li>

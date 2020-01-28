@@ -87,7 +87,7 @@ class ValueProps extends React.Component<{}, {}>
                     className="text-center big-text"
                     style={{padding: "20px", marginBottom: "100px", fontWeight: 800}}>Bridge, the connectivity 
                     platform built specifically for mental health professionals.</h1>
-                    <div className="d-flex flex-space-between">
+                    <div id="features" className="d-flex flex-space-between">
                         {
                             valuePropHeaders.map( (value: string, idx: number) => {
                                 return (<div style={{padding: "0px 30px"}}>
