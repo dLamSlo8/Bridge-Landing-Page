@@ -2,7 +2,9 @@ import React from 'react';
 import "./App.css";
 import "./SignUp.css";
 import s_phone from "./static/slanted_phone.png"
-import socials from "./static/socials.png"
+import instagram from "./static/Instagram.png"
+import facebook from "./static/Facebook.png"
+import linkedin from "./static/LinkedIn@2x.png"
 import StateDropDown from './states'
 
 const FindBridge: React.FC = () =>
@@ -110,7 +112,20 @@ class HeaderNav extends React.Component<{}, {}>
                             </div>
                         </div>
                         <div className="d-flex flex-space-around">
-                            <img src={socials} alt="" style={{width:"25%", marginTop: "15px", marginRight:"40px"}}/>                        
+                            <p style={{color:"white", fontSize:"12px"}}>
+                                <span style={{ fontWeight:"bold"}}>
+                                    Follow Us
+                                </span><br></br>
+                                <a href="https://www.instagram.com/yourbridge.io/" target="_blank">
+                                    <img src={instagram} alt="" style={{width:"10%", marginTop: "15px", marginRight:"10px"}}/>                        
+                                </a>
+                                <a href="" target="_blank">
+                                    <img src={facebook} alt="" style={{width:"10%", marginTop: "15px", marginRight:"10px"}}/>                        
+                                </a>
+                                <a href="https://www.linkedin.com/company/yourbridge/?viewAsMember=true" target="_blank">
+                                    <img src={linkedin} alt="" style={{width:"10%", marginTop: "15px", marginRight:"10px"}}/>                        
+                                </a>
+                            </p>
                             <a href="#" className="contact-button" style={{alignSelf:"flex-start", marginTop:"40px", marginRight:"40px"}}>Contact Us</a>                            
                             <div className="flex-column">
                             <p className="signed-up-text">
