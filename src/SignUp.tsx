@@ -119,7 +119,7 @@ class HeaderNav extends React.Component<{}, {}>
                                 <a href="https://www.instagram.com/yourbridge.io/" target="_blank">
                                     <img src={instagram} alt="" style={{width:"10%", marginTop: "15px", marginRight:"10px"}}/>                        
                                 </a>
-                                <a href="" target="_blank">
+                                <a href="https://www.facebook.com/Bridge-106202354272895/?modal=admin_todo_tour" target="_blank">
                                     <img src={facebook} alt="" style={{width:"10%", marginTop: "15px", marginRight:"10px"}}/>                        
                                 </a>
                                 <a href="https://www.linkedin.com/company/yourbridge/?viewAsMember=true" target="_blank">
