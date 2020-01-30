@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button, Popup} from 'semantic-ui-react'
 import "./App.css";
 import "./SignUp.css";
 import s_phone from "./static/slanted_phone.png"
@@ -26,7 +27,14 @@ const FindBridge: React.FC = () =>
     );
 }
 
-class HeaderNav extends React.Component<{}, {}> 
+const PopupText: React.FC = () =>
+{
+    return(
+        <Popup content='Thanks for joining!' />
+    );
+}
+
+class SignUp extends React.Component<{}, {}> 
 {
 
     constructor(props: any)
@@ -142,4 +150,4 @@ class HeaderNav extends React.Component<{}, {}>
 }
 
 
-export default HeaderNav;
+export default SignUp;
