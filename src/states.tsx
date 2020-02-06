@@ -10,7 +10,7 @@ class StateDropDown extends React.Component<{}, {}>
     render() 
     {
         return (
-            <select className="loc-form-states">
+            <select className="loc-form-states" name="states" aria-label="states">
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
