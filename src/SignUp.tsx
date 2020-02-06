@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button, Popup} from 'semantic-ui-react'
 import "./App.css";
 import "./SignUp.css";
 import s_phone from "./static/slanted_phone.png"
@@ -11,7 +12,7 @@ const FindBridge: React.FC = () =>
 {
     return (
     <div className="how-find-form">
-        <select className="how-find-form-dropmenu">
+        <select className="how-find-form-dropmenu" name="HowFoundBridge" aria-label="How did you hear about Bridge?">
             <option value="" disabled selected>How did you hear about Bridge?</option>
             <option value="GG">Google</option>
             <option value="FB">Facebook</option>
@@ -26,7 +27,14 @@ const FindBridge: React.FC = () =>
     );
 }
 
-class HeaderNav extends React.Component<{}, {}> 
+const PopupText: React.FC = () =>
+{
+    return(
+    <Popup content='Thanks for joining!' trigger={<input type="submit" className="submit-button"></input>}/>
+    );
+}
+
+class SignUp extends React.Component<{}, {}> 
 {
 
     constructor(props: any)
@@ -48,27 +56,23 @@ class HeaderNav extends React.Component<{}, {}>
                                 <form>
                                     <label>
                                         <div className="name-form">
-                                            <input type="text" placeholder="First Name"className="name-form-items"/>
-                                            <input type="text" placeholder="Last Name" className="name-form-items"/>
+                                            <input type="text" placeholder="First Name"className="name-form-items" aria-label="first name"/>
+                                            <input type="text" placeholder="Last Name" className="name-form-items" aria-label="last name"/>
                                         </div>
                                         <div className="info-form">
-                                            <input type="text" placeholder="Email" className="info-form-email"/>
-                                            <select className="info-form-provider">
-                                                <option value="" disabled selected>Provider type</option>
-                                                <option value="ANP">ANP</option>
-                                                <option value="LCSW">LCSW</option>
-                                                <option value="LMFT">LMFT</option>
-                                                <option value="LMHC">LPA</option>
-                                                <option value="LPC">LPC</option>    
-                                                <option value="Ph.D">Ph.D</option>                                            
-                                                <option value="Psy.D">Psy.D</option>
-                                                <option value="Psycht">Psychiatrist</option>
+                                            <input type="text" placeholder="Email" className="info-form-email" aria-label="email"/>
+                                            <select className="info-form-provider" name="provider type" aria-label="provider type">
+                                                <option value="" disabled selected>Provider type</option>                                        
+                                                <option value="Counselor">Counselor</option>                                                    
+                                                <option value="Psychiatrist">Psychiatrist</option>
+                                                <option value="Psychologist">Psychologist</option>
+                                                <option value="Therapist">Therapist</option>                                            
                                             </select>
                                         </div>
                                         <div className="loc-form">
                                             <StateDropDown>
                                             </StateDropDown>
-                                            <input type="text" placeholder="City" className="loc-form-city" />
+                                            <input type="text" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
                                         </div>
                                         <FindBridge></FindBridge>
                                     </label>
@@ -76,7 +80,7 @@ class HeaderNav extends React.Component<{}, {}>
                             </div>
                             <div className="d-flex flex-end">
                                 <p style={{fontSize: "12px", fontWeight: "bold"}}>for more details
-                                <span style={{display: "inline-block", paddingLeft: "15px"}}><a href="#" className="submit-button">Submit</a></span></p>
+                                <span style={{display: "inline-block", paddingLeft: "15px"}}><PopupText></PopupText></span></p>
                             </div>
                         </div>
                         <div style={{flexBasis:"30%"}} className="d-flex flex-cross-center">
@@ -142,4 +146,4 @@ class HeaderNav extends React.Component<{}, {}>
 }
 
 
-export default HeaderNav;
+export default SignUp;
