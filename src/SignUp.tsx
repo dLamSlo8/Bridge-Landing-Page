@@ -30,7 +30,13 @@ const FindBridge: React.FC = () =>
 const PopupText: React.FC = () =>
 {
     return(
-    <Popup content='Thanks for joining!' trigger={<input type="submit" className="submit-button"></input>}/>
+    <Popup content='Thanks for joining!' hoverable={false}
+           trigger={<button type="submit" className="submit-button">Submit</button>}
+           on="click"
+           position="bottom center"
+           offset="0 25%"
+           opacity="1.0"
+           />
     );
 }
 
