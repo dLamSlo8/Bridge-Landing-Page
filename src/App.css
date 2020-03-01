@@ -6,6 +6,11 @@ a {
   text-decoration: none;
 }
 
+div.page-spacing > * > * {
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
 p, li > a {
   font-weight: 500;
   color: #6B6B6B;
@@ -55,7 +60,8 @@ h1 {
 {
   display: flex;
   justify-content: space-between;
-  padding: 25px 125px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .navbar > *
@@ -123,7 +129,7 @@ h1 {
 {
   display: flex;
   justify-content: space-between;
-  padding: 20px 125px 0px;
+  /* padding: 20px 125px 0px; */
 }
 
 .bigish-text
@@ -151,7 +157,7 @@ span.bigger-text
   background-image: linear-gradient(to right, #8113AA, #786Ac7);
   display: flex;
   justify-content: space-around;
-  padding: 50px 200px;
+  /* padding: 50px 200px; */
 }
 
 .join-us-segment .join-button
@@ -229,10 +235,6 @@ span.bigger-text
 {
   justify-content: flex-end;
 }
-.site-spacing
-{
-  padding: 50px 125px;
-}
 
 /* Whether you're a ... */
 
@@ -301,4 +303,21 @@ p.submain1
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+}
+
+#features {
+  flex-wrap: nowrap;
+}
+
+#features > * {
+  flex-basis: 25%;
+}
+
+@media screen and (max-width: 1200px) {
+  #features {
+    flex-wrap: wrap;
+  }
+  #features > * {
+    flex-basis: calc(50% - 10vw);
+  }
 }

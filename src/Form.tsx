@@ -3,6 +3,7 @@ import "./App.css"
 import React from 'react';
 import {Button, Popup} from 'semantic-ui-react'
 import StateDropDown from './states'
+import axios from 'axios'
 
 const FindBridge: React.FC = () =>
 {
@@ -36,18 +37,41 @@ const PopupText: React.FC = () =>
     );
 }
 
-class Form extends React.Component<{}, {}>
+class Form extends React.Component<{handleSubmit: (e: React.SyntheticEvent) => void}, {}>
 {
     constructor(props: any)
     {
         super(props);
     }
+    handleSubmit(e: React.SyntheticEvent) {
+       console.log("ayy");
+      e.preventDefault();
+      let target = e.target as any;
+      let formData = {
+          first_name: target.firstName.value,
+          last_name: target.lastName.value,
+          email: target.email.value,
+          provider: target.providerType.value,
+          state: target.states.value,
+          city: target.city.value,
+          discover_reason: target.howFoundBridge.value
+      }
+      console.log(formData);
+      axios.post("https://pont-bridge.appspot.com/api/subscriber/create",
+      formData)
+      .then((res: any) => {
+          console.log(res);
+          console.log(res.data);
+      })
+  }
     render() 
     {
         return (    
                 <div id="form">
                     <div>
-                        <form>
+                        <form 
+                        id="bridge-form"
+                        onSubmit={this.handleSubmit}>
                             <label>
                                 <div className="name-form">
                                     <input type="text" placeholder="First Name"className="name-form-items" aria-label="first name"/>
@@ -80,4 +104,4 @@ class Form extends React.Component<{}, {}>
         )
     }
 }
-export default Form
+export default Form;

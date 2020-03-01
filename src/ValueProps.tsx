@@ -58,7 +58,9 @@ class ValueProps extends React.Component<{}, {}>
         return (
             <div>
                 <section className="join-us-segment">
-                    <div className="d-flex">
+                    <div 
+                    className="d-flex"
+                    style={{flexBasis: "40%"}}>
                         <h1>Reduce</h1>
                         <p>
                             Burn-out <br/>
@@ -66,7 +68,9 @@ class ValueProps extends React.Component<{}, {}>
                             Blind referrals <br/>
                         </p>
                     </div>
-                    <div className="d-flex">
+                    <div 
+                    className="d-flex"
+                    style={{flexBasis: "40%"}}>
                         <h1>Enhance</h1>
                         <p>
                             Professional community <br/>
@@ -74,7 +78,9 @@ class ValueProps extends React.Component<{}, {}>
                             Practice stability <br/>
                         </p>
                     </div>
-                    <div className="d-flex flex-cross-center">
+                    <div 
+                    className="d-flex flex-cross-center"
+                    style={{flexBasis: "20%"}}>
                         <a 
                         data-scroll
                         href="#signup" 
