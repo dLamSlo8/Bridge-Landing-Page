@@ -3,11 +3,14 @@ import logo from './static/logo.png';
 const CopyrightBar: React.FC = () => {
     return (
         <div className="site-spacing d-flex">
-            <img 
-            src={logo}
-            alt="" 
-            className="image"
-            style={{marginRight: "50px"}} />
+            <div>
+                <img 
+                src={logo}
+                alt="" 
+                className="image"
+                style={{marginRight: "50px"}} />
+            </div>
+
 
                 <span 
                 className="color-black flex-column flex-center"

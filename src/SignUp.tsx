@@ -7,21 +7,22 @@ import instagram from "./static/Instagram.png"
 import facebook from "./static/Facebook.png"
 import linkedin from "./static/LinkedIn@2x.png"
 import StateDropDown from './states'
+import axios from 'axios';
 
 const FindBridge: React.FC = () =>
 {
     return (
     <div className="how-find-form">
-        <select className="how-find-form-dropmenu" name="HowFoundBridge" aria-label="How did you hear about Bridge?">
+        <select className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?">
             <option value="" disabled selected>How did you hear about Bridge?</option>
-            <option value="GG">Google</option>
-            <option value="FB">Facebook</option>
-            <option value="LI">LinkedIn</option>
-            <option value="IG">Instagram</option>
-            <option value="FC">From a colleague</option>
-            <option value="FF">From a friend</option>
-            <option value="FO">From my organization</option>
-            <option value="OR">Other</option>
+            <option value="Google">Google</option>
+            <option value="Facebook">Facebook</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Instagram">Instagram</option>
+            <option value="From a colleague">From a colleague</option>
+            <option value="From a friend">From a friend</option>
+            <option value="From my organization">From my organization</option>
+            <option value="Other">Other</option>
         </select>
     </div>
     );
@@ -47,6 +48,28 @@ class SignUp extends React.Component<{}, {}>
     {
         super(props);
     }
+
+    handleSubmit(e: React.SyntheticEvent) {
+        e.preventDefault();
+        let target = e.target as any;
+        let formData = {
+            first_name: target.firstName.value,
+            last_name: target.lastName.value,
+            email: target.email.value,
+            provider: target.providerType.value,
+            state: target.states.value,
+            city: target.city.value,
+            discover_reason: target.howFoundBridge.value
+        }
+        console.log(formData);
+        axios.post("https://pont-bridge.appspot.com/api/subscriber/create",
+        formData)
+        .then((res: any) => {
+            console.log(res);
+            console.log(res.data);
+        })
+    }
+
     render() 
     {
         return (
@@ -59,15 +82,15 @@ class SignUp extends React.Component<{}, {}>
                                 </p>
                             </div>
                             <div>
-                                <form>
+                                <form onSubmit={this.handleSubmit}>
                                     <label>
                                         <div className="name-form">
-                                            <input type="text" placeholder="First Name"className="name-form-items" aria-label="first name"/>
-                                            <input type="text" placeholder="Last Name" className="name-form-items" aria-label="last name"/>
+                                            <input type="text" placeholder="First Name"className="name-form-items" aria-label="first name" name="firstName"/>
+                                            <input type="text" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
                                         </div>
                                         <div className="info-form">
-                                            <input type="text" placeholder="Email" className="info-form-email" aria-label="email"/>
-                                            <select className="info-form-provider" name="provider type" aria-label="provider type">
+                                            <input type="text" placeholder="Email" className="info-form-email" aria-label="email" name="email"/>
+                                            <select className="info-form-provider" name="providerType" aria-label="provider type">
                                                 <option value="" disabled selected>Provider type</option>                                        
                                                 <option value="Counselor">Counselor</option>                                                    
                                                 <option value="Psychiatrist">Psychiatrist</option>
@@ -82,12 +105,13 @@ class SignUp extends React.Component<{}, {}>
                                         </div>
                                         <FindBridge></FindBridge>
                                     </label>
-                                </form>
-                            </div>
-                            <div className="d-flex flex-end">
-                                <p style={{fontSize: "12px", fontWeight: "bold"}}>for more details
-                                <span style={{display: "inline-block", paddingLeft: "15px"}}><PopupText></PopupText></span></p>
-                            </div>
+                                    <div className="d-flex flex-end">
+                                        <p style={{fontSize: "12px", fontWeight: "bold"}}>for more details
+                                        <span style={{display: "inline-block", paddingLeft: "15px"}}><PopupText></PopupText></span></p>
+                                    </div>
+                            </form>
+                        </div>
+
                         </div>
                         <div style={{flexBasis:"30%"}} className="d-flex flex-cross-center">
                             <img src={s_phone} alt="" style={{width:"80%"}}/>
