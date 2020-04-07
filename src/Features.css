@@ -1,0 +1,45 @@
+.land-features {
+   padding: 50px 75px;
+   text-align: center;
+}
+
+div.land-features > div > div {
+   flex-basis: 30%;
+   margin: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+div.land-features > div > div > h2 {
+   margin-bottom: 0;
+}
+
+div.land-features > div > div > img {
+   max-width: 150px;
+   width: 33%;
+}
+
+.land-get-started {
+   margin-top: 50px;
+   background-color: var(--turquoise);
+   color: white;
+   text-align: center;
+   padding: 25px 300px 50px 300px;
+}
+
+.land-get-started-btn {
+   padding: 5px 25px;
+   border: 2px solid white;
+   border-radius: 20px;
+   color: white;
+   transition: color 0.3s ease-in-out,
+               background-color 0.3s ease-in-out;
+}
+
+.land-get-started-btn:hover {
+   color: var(--turquoise);
+   background-color: white;  
+}
+

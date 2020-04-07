@@ -28,6 +28,34 @@ a {
    text-decoration: none;
 }
 
+a.land-btn {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 700;  
+}
+
+.header-heavy {
+   font-family: mr-eaves-xl-sans, sans-serif;
+   font-style: normal;
+   font-weight: 800;
+}
+
+.header-bold {
+   font-family: mr-eaves-xl-sans, sans-serif;
+   font-style: normal;
+   font-weight: 700;
+}
+
+h1 {
+   font-size: calc(2.5rem + 0.75vw);
+}
+
+.body-text {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 300;  
+}
+
 div.page-spacing > * > * {
   padding-left: 8vw;
   padding-right: 8vw;
@@ -42,10 +70,7 @@ p, li > a {
 {
   color: black;
 }
-h1 {
-  font-weight: 700;
-  color: #454545;
-}
+
 
 .App {
   text-align: center;
