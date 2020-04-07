@@ -1,0 +1,7 @@
+.value-prop-title
+{
+    display:flex;
+    flex-direction: column;
+    font-size: 1 rem;
+    font-weight: bold;
+}

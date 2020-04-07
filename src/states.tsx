@@ -1,6 +1,7 @@
 import React from 'react';
 import "./App.css";
-import "./SignUp.css"
+import "./SignUp.css";
+
 class StateDropDown extends React.Component<{}, {}> 
 {
     constructor(props: any)
@@ -10,7 +11,7 @@ class StateDropDown extends React.Component<{}, {}>
     render() 
     {
         return (
-            <select className="loc-form-states" name="states" aria-label="states">
+            <select className="loc-form-states" style={{marginRight: "20px"}} name="states" aria-label="states">
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>

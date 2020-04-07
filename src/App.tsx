@@ -21,7 +21,9 @@ class App extends React.Component<{}, {}> {
   render() {
     return (
       <div>
-
+        <ValueProps></ValueProps>
+        <hr style={{border: "none", height:"1.125px", background: "black", width: "85vw"}}></hr>
+        <SignUp></SignUp>
       </div>
     );
   }
