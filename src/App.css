@@ -1,9 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap');
-* {
+/* * {
   font-family: 'Montserrat', sans-serif;
 } 
 a {
   text-decoration: none;
+} */
+h3 {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 300;
+}
+
+:root {
+   --dark-purple: #462489;
+   --middle-purple: #8256D8;
+   --light-purple: #beaeff;
+   --turquoise: #6dc199;
+   --dark-gray: #353535;
+   --light-gray: #5a5a5a;
+}
+
+.flex {
+   display: flex;
+}
+
+a {
+   text-decoration: none;
 }
 
 div.page-spacing > * > * {
