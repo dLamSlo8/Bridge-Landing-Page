@@ -20,17 +20,8 @@ class App extends React.Component<{}, {}> {
   }
   render() {
     return (
-      <div className="page-spacing">
-        <HeaderNav>
-        </HeaderNav>
-        <ValueProps>
-        </ValueProps>
-        <Features>
-        </Features>
-        <SignUp>
-        </SignUp>
-        <CopyrightBar>
-        </CopyrightBar>
+      <div>
+
       </div>
     );
   }
