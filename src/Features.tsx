@@ -1,62 +1,50 @@
 import React from 'react';
 import "./App.css";
-import bar from "./static/Benefits Icons.png";
+import "./Features.css";
+import contact from "./static/feature-contact.svg";
+import message from "./static/feature-message.svg";
+import referral from "./static/feature-referral.svg";
 
-class Features extends React.Component<{}, {}> 
-{
-    constructor(props: any)
-    {
-        super(props);
-    }
-    render() 
-    {
-        return (
-            <div id="benefits">
-                <section className="start">
-                    <h1 className="intro"
-                    style={{fontSize: "2em", fontWeight: 700}}>
-                        With Bridge, <br/>
-                    </h1>
-                </section>
-                <nav className="collab">
-                    <ul className="with-bridge">
-                        <li>
-                            <h1 className="main1 bigish-text">
-                            Feel collaborative <br/>
-                            even in private <br/>
-                            practice <br/><br/>
-                            <p className="submain1">
-                                Avoid burnout, stay up to date with your <br/>
-                                colleagues, groups, and organizations. 
-                            </p>
-                            </h1>
-                        </li>
-                        <li><h1 className="main1 bigish-text">
-                            Save time on <br/>
-                            accurate <br/>
-                            referrals <br/><br/>
-                            <p className="submain1">
-                                With easy referral generation, find <br/>
-                                the optimal professional for a <br/>
-                                client in need. 
-                            </p>
-                            </h1></li>
-                        <li><h1 className="main1 bigish-text">
-                            Grow a stable, <br/>
-                            healthy practice <br/><br/><br/>
-                            <p className="submain1">
-                                Grow your network and find the <br/>
-                                right clients for your practice.
-                            </p>
-                            </h1></li>
-                        
-                    </ul>
-                    <br/><br/><br/><br/>
-                </nav>
-                    <img src={bar} alt="" className="bar" />      
+class Features extends React.Component<{}, {}> {
+
+   render() {
+      return (
+         <div className="land-features">
+            <h1
+            className="header-heavy">Connecting Mental Healthcare</h1>
+            <br/>
+            <div 
+            className="d-flex flex-space-between flex-wrap">
+               <div>
+                  <img src={contact} alt="Contact"/>
+                  <h2>Real-Time Professional Directory</h2>
+                  <p className="body-text">Set your availability, consult with 
+                  your colleagues, discover new connections, and expand your professional network.</p>
+               </div>
+               <div>
+                  <img src={referral} alt="Referral"/>
+                  <h2>Referral Management Software</h2>
+                  <p className="body-text">Create accurate referrals, fast, find the best resources
+                  for your clients, and accept the right clients for your practice.</p>
+               </div>
+               <div>
+                  <img src={message} alt="Message"/>
+                  <h2>HIPAA Compliant Messaging</h2>
+                  <p>Send and receive secure messages to verified professionals on a 
+                     platform compliant with HIPAA guidelines.
+                  </p>
+               </div>
             </div>
-        )
-    }
+            <div className="land-get-started">
+               <h2
+               className="header-bold">Connect, communicate, and collaborate on a 
+               modern, HIPAA-compiant platform.</h2>
+               <a 
+               className="land-get-started-btn" href="#">Get Started</a>
+            </div>
+         </div>
+      )
+   }
 }
 
 export default Features;

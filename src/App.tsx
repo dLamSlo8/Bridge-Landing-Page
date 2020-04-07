@@ -7,6 +7,7 @@ import Features from './Features';
 import ValueProps from './ValueProps';
 import CopyrightBar from './CopyrightBar';
 import SmoothScroll from 'smooth-scroll';
+import Header from './Header';
 import './App.css';
 
 class App extends React.Component<{}, {}> {
@@ -21,9 +22,12 @@ class App extends React.Component<{}, {}> {
   render() {
     return (
       <div>
+       <Header />
+       <Features />
         <ValueProps></ValueProps>
         <hr style={{border: "none", height:"1.125px", background: "black", width: "85vw"}}></hr>
         <SignUp></SignUp>
+
       </div>
     );
   }
