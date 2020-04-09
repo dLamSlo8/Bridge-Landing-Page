@@ -5,10 +5,92 @@
     font-size: 1.7rem;
     font-weight: bold;
     color: black;
+    padding-top: 6rem;
 }
 
 .value-prop-para
 {
     font-size: 1.25rem;
     font-weight: normal;
+    overflow-wrap: normal;
+}
+
+.value-props
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 5em;
+}
+
+.value-colleagues
+{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.value-availability
+{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.value-clients
+{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+
+@media screen and (max-width: 640px)
+{
+    .value-prop-title
+    {
+        align-items: center;        
+        font-size: 1.2rem;
+        padding-top: 2rem;
+    }
+
+    .value-prop-para
+    {
+        align-items: center;
+        font-size: 0.75rem;       
+        padding-left: 5rem; 
+        padding-right: 5rem;
+    }
+
+    div.value-colleagues
+    {
+        flex-direction: column;
+        align-items: center;                
+    }
+    div.value-colleagues > img
+    {
+        display: flex;
+    }
+
+    div.value-availability
+    {
+        flex-direction: column-reverse;
+        align-items: center;                
+    }
+    div.value-availability > img
+    {
+        display: flex;
+    }
+
+    div.value-clients
+    {
+        flex-direction: column;
+        align-items: center;                
+    }
+    div.value-clients > img
+    {
+        display: flex;
+        justify-content: center;
+    }
+
 }

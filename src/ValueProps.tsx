@@ -14,34 +14,34 @@ class ValueProps extends React.Component<{}, {}>
     render() 
     {
         return (
-            <div className="d-flex flex-column">
-                <div className="d-flex flex-center flex-wrap">
+            <div className="value-props">
+                <div className="value-colleagues">
                     <div className="d-flex flex-wrap flex-center" style={{flexBasis: "30%"}}>
-                        <p className="value-prop-title" style={{paddingTop: "6rem"}}>
+                        <p className="value-prop-title">
                             Consult with your colleagues
-                        <p className="value-prop-para" style={{wordWrap: "normal"}}>
+                        <p className="value-prop-para">
                             Stay up to date with your colleagues and discover new professional connections.
                         </p>
                         </p>                                                                
                     </div>                    
-                        <img src={collaborate} alt="" style={{maxWidth: "50%", flexBasis: "30%"}}></img>                
+                    <img src={collaborate} alt="" style={{maxWidth: "50%", flexBasis: "30%"}}></img>                
                 </div>
-                <div className="d-flex flex-center flex-wrap">                
+                <div className="value-availability">                
                     <img src={availability} alt="" style={{maxWidth: "50%", flexBasis: "30%"}}></img>    
                     <div className="d-flex flex-wrap flex-center" style={{flexBasis: "30%"}}>
-                        <p className="value-prop-title" style={{paddingTop: "6rem"}}>
+                        <p className="value-prop-title">
                             Set your availability
-                        <p className="value-prop-para" style={{wordWrap: "normal"}}>
+                        <p className="value-prop-para">
                             Notify your colleagues whether or not you are accepting new clients.
                         </p>
                         </p>                                                                
                     </div>            
                 </div>
-                <div className="d-flex flex-center flex-wrap"> 
+                <div className="value-clients"> 
                     <div className="d-flex flex-wrap flex-center" style={{flexBasis: "30%"}}>
-                        <p className="value-prop-title" style={{paddingTop: "6rem"}}>
+                        <p className="value-prop-title">
                             Accept the right clients for you
-                        <p className="value-prop-para" style={{wordWrap: "normal"}}>
+                        <p className="value-prop-para">
                             Receive appropriate referrals based on your preferences, availability, insurance type and specialties.
                         </p>
                         </p>                                                                

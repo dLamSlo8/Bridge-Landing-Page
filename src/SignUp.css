@@ -1,3 +1,29 @@
+.signup-form
+{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+div.signup-form > div
+{
+  flex-basis: 35%;
+  margin-right: 5em;
+}
+
+.wireframe
+{
+  display: flex;
+  align-items: center;
+  flex-basis: 35%;
+  padding-top: 2.5em;
+}
+
+div.wireframe > img
+{
+  max-width: 110%;
+}
+
 .name-form
 {
   display:flex;
@@ -64,12 +90,13 @@
 
 .submit-button
 {
-  font-size: 1rem;
-  padding: 12px;
-  border-radius: 20px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  border-radius: 1.2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   color: white;
+  font-weight: bold;
   background-color: var(--middle-purple);
   white-space: nowrap;
 }
@@ -85,8 +112,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 1.5em;
 }
+
+div.bot-bar > div > img
+{
+  min-width: 15%;
+  min-height: 15%;
+  width: 15%;
+  height: 15%;
+}
+
 
 .contact-button
 {
@@ -130,4 +166,41 @@
 .form-padding
 {
   margin-top: 15px
+}
+
+@media screen and (max-width: 640px)
+{
+  div.signup-form > div
+  {
+    margin-right: 0em;    
+    font-size: 0.65rem;  
+  }
+
+  div.wireframe
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.wireframe > img
+  {
+    max-width: 250%;
+  }
+
+  div.bot-bar
+  {
+    padding: 3em; 
+  }
+
+  div.bot-bar > div 
+  {
+     flex-direction: column;
+     align-items: center;         
+  }
+
+  div.bot-bar > div > img
+  {
+    width: 70%
+  }
+
 }

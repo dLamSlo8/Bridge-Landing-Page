@@ -75,13 +75,13 @@ class SignUp extends React.Component<{}, {}>
     {
         return (
                 <div id="signup">
-                    <div className="d-flex flex-center flex-wrap">
-                        <div style={{flexBasis:"35%", marginRight: "9em"}}>
+                    <div className="signup-form">
+                        <div>
                             <div>
-                                <p className="d-flex flex-center x-large-text bold-text" style={{color: "black"}}>
+                                <p className="d-flex flex-center x-large-text bold-text flex-wrap" style={{color: "black"}}>
                                     Ready to join your colleagues?
                                 </p>
-                                <p className="d-flex flex-center" style={{color: "dark-gray", fontSize: "1.4rem"}}>
+                                <p className="d-flex flex-center flex-wrap" style={{color: "dark-gray", fontSize: "1.4rem"}}>
                                     For more details and updates on product launches join our mailing list     
                                 </p>
                             </div>
@@ -89,11 +89,11 @@ class SignUp extends React.Component<{}, {}>
                                 <form onSubmit={this.handleSubmit}>
                                     <label>
                                         <div className="name-form">
-                                            <input type="text" placeholder="First Name"className="name-form-items" style={{marginRight: "20px"}} aria-label="first name" name="firstName"/>                                                                                                    
+                                            <input type="text" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
                                             <input type="text" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
                                         </div>
                                         <div className="info-form form-padding">
-                                            <input type="text" placeholder="Email" className="info-form-email" style={{marginRight: "20px"}} aria-label="email" name="email"/>
+                                            <input type="text" placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>
                                             <select className="info-form-provider" name="providerType" aria-label="provider type">
                                                 <option value="" disabled selected>Provider type</option>                                        
                                                 <option value="Counselor">Counselor</option>                                                    
@@ -116,29 +116,29 @@ class SignUp extends React.Component<{}, {}>
                         </div>
 
                         </div>
-                        <div style={{flexBasis:"35%", paddingTop: "2.5em"}} className="d-flex flex-cross-center">
-                            <img src={wireframeGraphic} alt="" style={{minWidth:"100%", maxWidth:"100%"}}/>
+                        <div className="wireframe">
+                            <img src={wireframeGraphic} alt=""/>
                         </div>
                     </div>
                     <div className="bot-bar" style={{textAlign:"center", marginTop:"5em"}}>
                         <div className="d-flex flex-space-around flex-wrap">
-                            <img src={logo} alt="" style={{maxWidth: "15%", maxHeight: "15%", minWidth: "15%", minHeight: "15%"}}/>                                                    
-                            <p style={{color: "white"}}>
-                            Copyright © 2020 Bridge Technology, Inc. All Rights Reserved
+                            <img src={logo} alt=""/>                                                    
+                            <p style={{color: "white", paddingTop: "1em"}}>
+                                Copyright © 2020 Bridge Technology, Inc. All Rights Reserved
                             </p>
                             <div className="d-flex flex-column" style={{color:"white", fontSize:"1.2rem"}}>
                                 <span>
                                     Follow Us
                                 </span><br></br>
-                                <div style={{marginLeft: "12px"}}>
+                                <div style={{marginLeft: "0.8em"}}>
                                 <a href="https://www.instagram.com/yourbridge.io/" target="_blank">
-                                    <img src={instagram} alt="" style={{width:"10%", marginRight:"10px"}}/>                        
+                                    <img src={instagram} alt="" style={{width:"10%", marginRight:"0.7em"}}/>                        
                                 </a>
                                 <a href="https://www.facebook.com/Bridge-106202354272895/?modal=admin_todo_tour" target="_blank">
-                                    <img src={facebook} alt="" style={{width:"10%", marginRight:"10px"}}/>                        
+                                    <img src={facebook} alt="" style={{width:"10%", marginRight:"0.7rem"}}/>                        
                                 </a>
                                 <a href="https://www.linkedin.com/company/yourbridge/?viewAsMember=true" target="_blank">
-                                    <img src={linkedin} alt="" style={{width:"10%", marginRight:"10px"}}/>                        
+                                    <img src={linkedin} alt="" style={{width:"10%", marginRight:"0.7rem"}}/>                        
                                 </a>   </div>                         
                             </div>            
                         </div>
