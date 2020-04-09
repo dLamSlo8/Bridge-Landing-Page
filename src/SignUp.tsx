@@ -78,10 +78,10 @@ class SignUp extends React.Component<{}, {}>
                     <div className="signup-form">
                         <div>
                             <div>
-                                <p className="d-flex flex-center x-large-text bold-text flex-wrap" style={{color: "black"}}>
+                                <h3 className="header-heavy" style={{color: "black"}}>
                                     Ready to join your colleagues?
-                                </p>
-                                <p className="d-flex flex-center flex-wrap" style={{color: "dark-gray", fontSize: "1.4rem"}}>
+                                </h3>
+                                <p className="body-text" style={{color: "var(--light-gray)"}}>
                                     For more details and updates on product launches join our mailing list     
                                 </p>
                             </div>

@@ -11,11 +11,11 @@ div.land-features > div > div {
    align-items: center;
 }
 
-div.land-features > div > div > h2 {
+
+div.land-features-content > div > h4 {
    margin-bottom: 0;
 }
-
-div.land-features > div > div > img {
+div.land-features-content > div > img {
    max-width: 150px;
    width: 33%;
 }
@@ -24,8 +24,8 @@ div.land-features > div > div > img {
    div.land-features > div {
       flex-direction: column;
    }
-   
 }
+
 /* 
 @media screen and (max-width: 440px) {
    div.land-features > div {
@@ -37,17 +37,16 @@ div.land-features > div > div > img {
    background-color: var(--turquoise);
    color: white;
    text-align: center;
-   padding: 2em calc(2em + 8vw) 4em calc(2em + 8vw);
+   padding: 1em 2em 3em;
 }
 
-.land-get-started h2 {
-   font-size: calc(1rem + 1vw);
-}
 .land-get-started-btn {
    padding: 5px 25px;
    border: 2px solid white;
    border-radius: 20px;
    color: white;
+   font-size: calc(1rem + 0.5vw);
+   white-space: nowrap;
    transition: color 0.3s ease-in-out,
                background-color 0.3s ease-in-out;
 }

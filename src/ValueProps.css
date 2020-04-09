@@ -1,4 +1,7 @@
-.value-prop-title
+.value-props h3 {
+   margin-bottom: 0;
+}
+/* .value-prop-title
 {
     display:flex;
     flex-direction: column;
@@ -6,12 +9,10 @@
     font-weight: bold;
     color: black;
     padding-top: 6rem;
-}
+} */
 
 .value-prop-para
 {
-    font-size: 1.25rem;
-    font-weight: normal;
     overflow-wrap: normal;
 }
 
@@ -21,6 +22,10 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding-bottom: 5em;
+}
+
+.value-props > div {
+   margin-bottom: 3em;
 }
 
 .value-colleagues
@@ -47,16 +52,20 @@
 
 @media screen and (max-width: 640px)
 {
-    .value-prop-title
+    /* .value-prop-title
     {
-        align-items: center;        
+       text-align: center;
         font-size: 1.2rem;
         padding-top: 2rem;
+    } */
+
+    .value-props > div {
+       margin-bottom: 0;
     }
 
     .value-prop-para
     {
-        align-items: center;
+       text-align: center;
         font-size: 0.75rem;       
         padding-left: 5rem; 
         padding-right: 5rem;
@@ -67,6 +76,11 @@
         flex-direction: column;
         align-items: center;                
     }
+
+    div.value-colleagues > div {
+       align-items: center;
+    }
+
     div.value-colleagues > img
     {
         display: flex;
@@ -77,6 +91,11 @@
         flex-direction: column-reverse;
         align-items: center;                
     }
+
+    div.value-availability > div {
+       align-items: center;
+    }
+
     div.value-availability > img
     {
         display: flex;
@@ -87,10 +106,21 @@
         flex-direction: column;
         align-items: center;                
     }
+
+    div.value-clients > div {
+       align-items: center;
+    }
+
     div.value-clients > img
     {
         display: flex;
         justify-content: center;
     }
 
+}
+
+@media screen and (max-width: 400px) {
+   .value-prop-para {
+      padding: 0 2rem;
+   }
 }
