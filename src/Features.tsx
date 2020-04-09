@@ -38,7 +38,7 @@ class Features extends React.Component<{}, {}> {
             <div className="land-get-started">
                <h2
                className="header-bold">Connect, communicate, and collaborate on a 
-               modern, HIPAA-compiant platform.</h2>
+               modern, HIPAA-compliant platform.</h2>
                <a 
                className="land-get-started-btn" href="#">Get Started</a>
             </div>
