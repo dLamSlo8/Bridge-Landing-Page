@@ -9,7 +9,6 @@ import linkedin from "./static/LinkedIn@2x.png"
 import logo from "./static/bridge_logo_1.0_singleColor_white.png"
 import StateDropDown from './states'
 import axios from 'axios';
-import { Transform } from 'stream';
 
 const FindBridge: React.FC = () =>
 {
@@ -121,9 +120,9 @@ class SignUp extends React.Component<{}, {}>
                             <img src={wireframeGraphic} alt="" style={{minWidth:"100%", maxWidth:"100%"}}/>
                         </div>
                     </div>
-                    <div className="bot-bar" style={{textAlign:"center", marginTop:"100px"}}>
-                        <div className="d-flex flex-space-around">
-                            <img src={logo} alt="" style={{maxWidth: "15%"}}/>                                                    
+                    <div className="bot-bar" style={{textAlign:"center", marginTop:"5em"}}>
+                        <div className="d-flex flex-space-around flex-wrap">
+                            <img src={logo} alt="" style={{maxWidth: "15%", maxHeight: "15%", minWidth: "15%", minHeight: "15%"}}/>                                                    
                             <p style={{color: "white"}}>
                             Copyright © 2020 Bridge Technology, Inc. All Rights Reserved
                             </p>
