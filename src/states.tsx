@@ -11,7 +11,7 @@ class StateDropDown extends React.Component<{}, {}>
     render() 
     {
         return (
-            <select className="loc-form-states" style={{marginRight: "20px"}} name="states" aria-label="states">
+            <select className="loc-form-states" style={{marginRight: "1.5rem"}} name="states" aria-label="states">
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
