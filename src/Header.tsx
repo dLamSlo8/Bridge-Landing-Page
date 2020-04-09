@@ -22,14 +22,16 @@ class Header extends React.Component<{}, {}> {
                   href="#">Login</a>
                </nav>
             </header>
-            <div className="land-header-images">
-               <img src={header} alt="Header image"/>
-               <img 
-               className="land-overlay"
-               src={overlay} alt="Overlay"/>
-               <img 
-               className="land-overlay" 
-               src={border} alt="Border"/>
+            <div className="land-header-section">
+               <div className="land-header-images">
+                  <img src={header} alt="Header image"/>
+                  <img 
+                  className="land-overlay"
+                  src={overlay} alt="Overlay"/>
+                  <img 
+                  className="land-overlay" 
+                  src={border} alt="Border"/>
+               </div>
                <div
                className="land-text-overlay">
                   <h1
