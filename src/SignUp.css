@@ -1,11 +1,16 @@
+
 .signup-form
 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 0 2em;
 }
 
-div.signup-form > div
+.signup-form h3 {
+   margin-bottom: 0;
+}
+div.signup-form > div:first-child
 {
   flex-basis: 35%;
   margin-right: 5em;
@@ -15,13 +20,13 @@ div.signup-form > div
 {
   display: flex;
   align-items: center;
-  flex-basis: 35%;
+  flex-basis: 45%;
   padding-top: 2.5em;
 }
 
 div.wireframe > img
 {
-  max-width: 110%;
+  max-width: 100%;
 }
 
 .name-form
@@ -168,6 +173,18 @@ div.bot-bar > div > img
   margin-top: 15px
 }
 
+@media screen and (max-width: 990px)
+{
+
+   div.signup-form {
+      flex-direction: column;
+      padding: 0 5em;
+   }
+   div.signup-form > div:first-child
+   {
+      margin-right: 0em;
+   }
+}
 @media screen and (max-width: 640px)
 {
   div.signup-form > div
@@ -176,16 +193,16 @@ div.bot-bar > div > img
     font-size: 0.65rem;  
   }
 
+  div.signup-form {
+   padding: 0 2em;
+  }
   div.wireframe
   {
     flex-direction: column;
     align-items: center;
   }
 
-  div.wireframe > img
-  {
-    max-width: 250%;
-  }
+
 
   div.bot-bar
   {
@@ -204,3 +221,4 @@ div.bot-bar > div > img
   }
 
 }
+
