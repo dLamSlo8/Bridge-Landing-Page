@@ -40,7 +40,7 @@ class Features extends React.Component<{}, {}> {
                className="header-bold">Connect, communicate, and collaborate on a 
                modern, HIPAA-compliant platform.</h3>
                <a 
-               className="land-get-started-btn" href="#">Get Started</a>
+               className="land-btn land-get-started-btn" href="#">Get Started</a>
             </div>
          </div>
       )

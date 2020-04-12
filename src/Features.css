@@ -43,12 +43,9 @@ div.land-features-content > div > img {
 .land-get-started-btn {
    padding: 5px 25px;
    border: 2px solid white;
-   border-radius: 20px;
    color: white;
    font-size: calc(1rem + 0.5vw);
-   white-space: nowrap;
-   transition: color 0.3s ease-in-out,
-               background-color 0.3s ease-in-out;
+
 }
 
 .land-get-started-btn:hover {
