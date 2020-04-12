@@ -110,7 +110,7 @@ class SignUp extends React.Component<{}, {}>
                                         <FindBridge></FindBridge>
                                     </label>
                                     <div className="d-flex flex-start form-padding">
-                                        <input type="submit" className="submit-button"></input>                                        
+                                        <input type="submit" className="submit-button" value="Submit"></input>                                        
                                     </div>
                             </form>
                         </div>
