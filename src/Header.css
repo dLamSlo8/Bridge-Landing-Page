@@ -14,16 +14,13 @@
 .land-logo {
    min-width: 200px;
    width: 20vw;
-   max-height: 85px;
+   height: auto;
 }
 
 .land-header-btn {
    padding: 5px 20px; 
    color: var(--middle-purple);
    border: 2px solid var(--middle-purple);
-   border-radius: 20px;
-   transition: color 0.3s ease-in-out,
-               background-color 0.3s ease-in-out;
 }
 
 .land-header-btn:hover {
@@ -34,10 +31,7 @@
 .land-join-btn {
    padding: 5px 25px;
    background-color: var(--turquoise);
-   border-radius: 20px;
    font-size: calc(1rem + 0.5vw);
-   transition: color 0.3s ease-in-out,
-               background-color 0.3s ease-in-out;
 }
 
 .land-join-btn:hover {
@@ -60,7 +54,7 @@
    right: 0;
    z-index: 10;
 }
-
+/* 
 .land-chat-overlay {
    position: absolute;
    max-width: 75px;
@@ -68,7 +62,7 @@
    bottom: 1em;
    z-index: 10;
    width: 15%;
-}
+} */
 .land-text-overlay {
    box-sizing: border-box;
    background-color: var(--middle-purple);

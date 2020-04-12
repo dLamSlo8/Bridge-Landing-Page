@@ -39,12 +39,10 @@ class Header extends React.Component<{}, {}> {
                   className="header-heavy">Consult. Refer. Grow.</h1>
                   <h4 className="body-heavy">The professional networking platform and client management tool suite for mental healthcare providers</h4>
                   <a 
-                  className="land-join-btn"
+                  className="land-btn land-join-btn"
                   href="#">Join</a>
                </div>
-               <img 
-               className="land-chat-overlay" 
-               src={chat} alt="Chat Button"/>
+
             </div>
          </div>
 

@@ -97,13 +97,18 @@ div.wireframe > img
 {
   font-size: 1.2rem;
   padding: 0.7rem;
-  border-radius: 1.2rem;
   padding-left: 3rem;
   padding-right: 3rem;
   color: white;
   font-weight: bold;
   background-color: var(--middle-purple);
   white-space: nowrap;
+  border: none;
+}
+
+.submit-button:hover
+{
+   cursor: pointer;
 }
 
 .x-large-text

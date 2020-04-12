@@ -29,11 +29,6 @@ a {
    text-decoration: none;
 }
 
-a.land-btn {
-   font-family: museo-sans, sans-serif;
-   font-style: normal;
-   font-weight: 700;  
-}
 
 .header-heavy {
    font-family: mr-eaves-xl-sans, sans-serif;
@@ -90,16 +85,16 @@ p {
    color: var(--light-gray);
 }
 
-div.page-spacing > * > * {
-  padding-left: 8vw;
-  padding-right: 8vw;
-}
+.land-btn {
+   white-space: nowrap;
+   border-radius: 20px;
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 700;  
+   transition: color 0.1s ease-in-out,
+   background-color 0.1s ease-in-out;
 
-*.color-black
-{
-  color: black;
 }
-
 
 .App {
   text-align: center;
