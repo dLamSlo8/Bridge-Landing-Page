@@ -196,13 +196,12 @@ div.bot-bar > div > img
   div.signup-form {
    padding: 0 2em;
   }
+  
   div.wireframe
   {
     flex-direction: column;
     align-items: center;
   }
-
-
 
   div.bot-bar
   {

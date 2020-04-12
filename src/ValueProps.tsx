@@ -23,10 +23,10 @@ class ValueProps extends React.Component<{}, {}>
                             Stay up to date with your colleagues and discover new professional connections.
                         </p>                                                                
                     </div>                    
-                    <img src={collaborate} alt="" style={{maxWidth: "50%", flexBasis: "30%"}}></img>                
+                    <img src={collaborate} alt=""></img>                
                 </div>
                 <div className="value-availability">                
-                    <img src={availability} alt="" style={{maxWidth: "50%", flexBasis: "30%"}}></img>    
+                    <img src={availability} alt=""></img>    
                     <div className="d-flex flex-column flex-center" style={{flexBasis: "30%"}}>
                         <h3 className="header-bold">
                            Set your availability
@@ -44,7 +44,7 @@ class ValueProps extends React.Component<{}, {}>
                             Receive appropriate referrals based on your preferences, availability, insurance type and specialties.
                         </p>                                                                
                     </div>                                      
-                    <img src={clients} alt="" style={{maxWidth: "50%", flexBasis: "30%"}}></img> 
+                    <img src={clients} alt=""></img> 
                 </div>
             </div>
             
