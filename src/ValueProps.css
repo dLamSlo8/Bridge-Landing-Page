@@ -25,7 +25,7 @@
 }
 
 .value-props > div {
-   margin-bottom: 3em;
+   margin-bottom: 10em;
 }
 
 .value-colleagues
@@ -35,12 +35,29 @@
     flex-wrap: wrap;    
 }
 
+div.value-colleagues > img
+{
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    flex-basis: 30%;        
+}
+
 .value-availability
 {
     display:flex;
     justify-content: center;
     flex-wrap: wrap;    
 }
+
+div.value-availability > img
+{
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    flex-basis: 30%;    
+}
+
 
 .value-clients
 {
@@ -49,6 +66,13 @@
     flex-wrap: wrap;    
 }
 
+div.value-clients > img
+{
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    flex-basis: 30%;    
+}
 
 @media screen and (max-width: 640px)
 {
@@ -81,8 +105,9 @@
     }
 
     div.value-colleagues > img
-    {
-        display: flex;
+    {    
+        width: 50%;
+        height: 50%;
     }
 
     div.value-availability
@@ -97,7 +122,8 @@
 
     div.value-availability > img
     {
-        display: flex;
+        width: 50%;
+        height: 50%;
     }
 
     div.value-clients
@@ -111,9 +137,9 @@
     }
 
     div.value-clients > img
-    {
-        display: flex;
-        justify-content: center;
+    {    
+        width: 50%;
+        height: 50%;
     }
 
 }
