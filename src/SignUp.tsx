@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Popup} from 'semantic-ui-react'
+import TextField from '@material-ui/core/TextField';
 import "./App.css";
 import "./SignUp.css";
 import wireframeGraphic from "./static/wireframeGraphic@2x.png"
@@ -89,11 +90,11 @@ class SignUp extends React.Component<{}, {}>
                                 <form onSubmit={this.handleSubmit}>
                                     <label>
                                         <div className="name-form">
-                                            <input type="text" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
-                                            <input type="text" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
+                                            <TextField placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
+                                            <TextField placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
                                         </div>
                                         <div className="info-form form-padding">
-                                            <input type="text" placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>
+                                            <TextField placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>
                                             <select className="info-form-provider" name="providerType" aria-label="provider type">
                                                 <option value="" disabled selected>Provider type</option>                                        
                                                 <option value="Counselor">Counselor</option>                                                    
@@ -105,7 +106,7 @@ class SignUp extends React.Component<{}, {}>
                                         <div className="loc-form form-padding">
                                             <StateDropDown>
                                             </StateDropDown>
-                                            <input type="text" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
+                                            <TextField placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
                                         </div>
                                         <FindBridge></FindBridge>
                                     </label>
