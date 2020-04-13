@@ -16,7 +16,7 @@ const FindBridge: React.FC = () =>
 {
     return (
     <div className="how-find-form form-padding">
-        <Select native variant="outlined" className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
+        <Select native required variant="outlined" className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
             <option value="" disabled selected>How did you hear about Bridge?</option>
             <option value="Google">Google</option>
             <option value="Facebook">Facebook</option>
@@ -91,12 +91,12 @@ class SignUp extends React.Component<{}, {}>
                                 <form onSubmit={this.handleSubmit}>
                                     <label>
                                         <div className="name-form">
-                                            <TextField variant="outlined" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
-                                            <TextField variant="outlined" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
+                                            <TextField required variant="outlined" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
+                                            <TextField required variant="outlined" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
                                         </div>
                                         <div className="info-form form-padding">
-                                            <TextField variant="outlined" placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
-                                            <Select native autoWidth variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type" style={{color: "#A9A9A9"}}>
+                                            <TextField variant="outlined" required placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
+                                            <Select native autoWidth required variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type" style={{color: "#A9A9A9"}}>
                                                 <option value="" disabled selected>Provider type</option>                                        
                                                 <option value="Counselor">Counselor</option>                                                    
                                                 <option value="Psychiatrist">Psychiatrist</option>
@@ -107,7 +107,7 @@ class SignUp extends React.Component<{}, {}>
                                         <div className="loc-form form-padding">
                                             <StateDropDown>
                                             </StateDropDown>
-                                            <TextField variant="outlined" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
+                                            <TextField required variant="outlined" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
                                         </div>
                                         <FindBridge></FindBridge>
                                     </label>
