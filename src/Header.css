@@ -2,7 +2,6 @@
 .land-header {
    display: flex;
    justify-content: space-between;
-   max-height: 85px;
    padding: 1em 2em 1em 1.25em;
 }
 
