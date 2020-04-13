@@ -11,25 +11,46 @@ import logo from "./static/bridge_logo_1.0_singleColor_white.png"
 import StateDropDown from './states'
 import axios from 'axios';
 import { FormControl } from '@material-ui/core';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
-const FindBridge: React.FC = () =>
+const FindBridge: React.FC<{valid: boolean, handleChange: (e: React.SyntheticEvent) => void}> = (props: any) =>
 {
     return (
     <div className="how-find-form form-padding">
-        <FormControl>
-            <InputLabel style={{paddingLeft: "1rem"}}>How did you hear about Bridge?</InputLabel>
-            <Select native variant="outlined" className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{height:"75.5%", width: "33rem"}}>
-                <option value="" disabled selected></option>
-                <option value="Google">Google</option>
-                <option value="Facebook">Facebook</option>
-                <option value="LinkedIn">LinkedIn</option>
-                <option value="Instagram">Instagram</option>
-                <option value="From a colleague">From a colleague</option>
-                <option value="From a friend">From a friend</option>
-                <option value="From my organization">From my organization</option>
-                <option value="Other">Other</option>
-            </Select>
-        </FormControl>
+       
+          { props.valid ? 
+            <FormControl variant="outlined" className="how-find-form-dropmenu">
+               <InputLabel>How did you hear about Bridge?</InputLabel>
+               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
+                     <option value="" disabled selected />
+                     <option value="Google">Google</option>
+                     <option value="Facebook">Facebook</option>
+                     <option value="LinkedIn">LinkedIn</option>
+                     <option value="Instagram">Instagram</option>
+                     <option value="From a colleague">From a colleague</option>
+                     <option value="From a friend">From a friend</option>
+                     <option value="From my organization">From my organization</option>
+                     <option value="Other">Other</option>
+               </Select> 
+            </FormControl> :
+            <FormControl variant="outlined" error className="how-find-form-dropmenu">
+               <InputLabel>How did you hear about Bridge?</InputLabel>
+               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
+                     <option value="" disabled selected />
+                     <option value="Google">Google</option>
+                     <option value="Facebook">Facebook</option>
+                     <option value="LinkedIn">LinkedIn</option>
+                     <option value="Instagram">Instagram</option>
+                     <option value="From a colleague">From a colleague</option>
+                     <option value="From a friend">From a friend</option>
+                     <option value="From my organization">From my organization</option>
+                     <option value="Other">Other</option>
+               </Select>
+               <FormHelperText>Required field.</FormHelperText>
+            </FormControl>
+
+         }
+       
     </div>
     );
 }
@@ -48,26 +69,35 @@ const PopupText: React.FC = () =>
 }
 
 class SignUp extends React.Component<{}, {submitted: boolean,
-                                          validate: {[name: string]: boolean}}> 
+                                          validate: {[name: string]: boolean},
+                                          other: boolean}> 
 {
-
     constructor(props: any)
     {
         super(props);
         this.state = {
             submitted: false,
             validate: {
-               first_name: false,
-               last_name: false,
-               email: false,
-               provider: false,
-               state: false,
-               city: false,
-               discover_reason: false
-            }
+               first_name: true,
+               last_name: true,
+               email_required: true,
+               email_valid: true,
+               provider: true,
+               state: true,
+               city: true,
+               discover_reason: true,
+               other: true
+            },
+            other: false
         }
-
+        this.handleDiscoverChange = this.handleDiscoverChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleDiscoverChange(e: React.SyntheticEvent) {
+      e.preventDefault();
+      let target = e.target as any;
+      this.setState({other: (target.value === "Other")});
     }
 
     handleSubmit(e: React.SyntheticEvent) {
@@ -89,7 +119,8 @@ class SignUp extends React.Component<{}, {submitted: boolean,
          this.setState({validate: {
             first_name: !!formData.first_name,
             last_name: !!formData.last_name,
-            email: !!formData.email && emailRegex.test(formData.email),
+            email_required: !!formData.email,
+            email_valid: emailRegex.test(formData.email),
             provider: !!formData.provider,
             state: !!formData.state,
             city: !!formData.city,
@@ -118,6 +149,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
 
     render() 
     {
+       let validate = this.state.validate;
         return (
                 <div id="signup">
                     <div className="signup-form">
@@ -143,30 +175,65 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                   <form onSubmit={this.handleSubmit}>
                                       <label>
                                           <div className="name-form">
-                                              <TextField required variant="outlined" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
-                                              <TextField required variant="outlined" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
+                                             {
+                                                validate.first_name ? 
+                                                <TextField variant="outlined" label="First Name" className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/> :    
+                                                <TextField error id="outlined-error-helper-text" className="name-form-items" style={{marginRight: "1.5rem"}} label="First Name" helperText="Required field." variant="outlined"/>                                                                                                 
+                                             }
+                                             {
+                                                validate.last_name ?
+                                                <TextField variant="outlined" label="Last Name" className="name-form-items" aria-label="last name" name="lastName"/> :
+                                                <TextField error id="outlined-error-helper-text" className="name-form-items" label="Last Name" helperText="Required field." variant="outlined"/>                                                                                                 
+                                             }
+
                                           </div>
                                           <div className="info-form form-padding">
-                                              <TextField variant="outlined" required placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
-                                              <FormControl>
-                                                <InputLabel style={{paddingLeft:"1rem"}}>Provider Type</InputLabel>
-                                                <Select native required variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" 
-                                                aria-label="provider type" style={{height:"75.5%", width:"11.5rem"}}>
-                                                    <option value="" disabled selected></option>                                        
-                                                    <option value="Counselor">Counselor</option>                                                    
-                                                    <option value="Psychiatrist">Psychiatrist</option>
-                                                    <option value="Psychologist">Psychologist</option>
-                                                    <option value="Therapist">Therapist</option>                                            
-                                                </Select>                                        
-                                              </FormControl>
-                                              
+                                             {
+                                                validate.email_required && validate.email_valid ?
+                                                <TextField variant="outlined" label="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/> :                               
+                                                <TextField error id="outlined-error-helper-text" className="info-form-email" label="Email" helperText={!validate.email_required ? "Required field." : "Invalid email."} style={{marginRight: "1.5rem"}}  variant="outlined"/>                                                                            
+                                             }
+                                             {
+                                                validate.provider ?
+                                                <FormControl variant="outlined">
+                                                   <InputLabel>Provider Type</InputLabel>
+                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type"
+                                                   style={{height: "75.5%", width: "11.5rem"}}>
+                                                      <option value="" disabled selected />                                     
+                                                      <option value="Counselor">Counselor</option>                                                    
+                                                      <option value="Psychiatrist">Psychiatrist</option>
+                                                      <option value="Psychologist">Psychologist</option>
+                                                      <option value="Therapist">Therapist</option>                                            
+                                                   </Select>
+                                                </FormControl> :
+                                                <FormControl variant="outlined" error>
+                                                   <InputLabel>Provider Type</InputLabel>
+                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type"
+                                                   style={{height: "75.5%", width: "11.5rem"}}>
+                                                      <option value="" disabled selected />                                     
+                                                      <option value="Counselor">Counselor</option>                                                    
+                                                      <option value="Psychiatrist">Psychiatrist</option>
+                                                      <option value="Psychologist">Psychologist</option>
+                                                      <option value="Therapist">Therapist</option>                                            
+                                                   </Select>
+                                                   <FormHelperText>Required field.</FormHelperText>
+                                                </FormControl>
+                                             }
+                                    
                                           </div>
                                           <div className="loc-form form-padding">
-                                              <StateDropDown>
-                                              </StateDropDown>
-                                              <TextField required variant="outlined" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
+                                              <StateDropDown valid={validate.state} />
+                                              {
+                                                 validate.city ? 
+                                                 <TextField variant="outlined" placeholder="City" className="loc-form-city" style={{marginLeft: "1.5rem"}} name="city" aria-label="city"/> :
+                                                 <TextField error id="outlined-error-helper-text" className="loc-form-city" style={{marginLeft: "1.5rem"}} label="City" helperText="Required field." variant="outlined"/>                                                                            
+                                              }
                                           </div>
-                                          <FindBridge></FindBridge>
+                                          <FindBridge 
+                                          valid={validate.discover_reason}
+                                          handleChange={this.handleDiscoverChange}></FindBridge>
+                                          {this.state.other && <div className="form-padding"><TextField variant="outlined" label="Other reason" aria-label="other" name="other"/></div> }
+                                                              
                                       </label>
                                       <div className="d-flex flex-start form-padding">
                                           <input type="submit" className="land-btn submit-button" value="Submit"></input>                                        

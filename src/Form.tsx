@@ -88,8 +88,7 @@ class Form extends React.Component<{handleSubmit: (e: React.SyntheticEvent) => v
                                     </select>
                                 </div>
                                 <div className="loc-form">
-                                    <StateDropDown>
-                                    </StateDropDown>
+                                    <StateDropDown valid={true} />
                                     <input type="text" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
                                 </div>
                                 <FindBridge></FindBridge>
