@@ -16,17 +16,20 @@ const FindBridge: React.FC = () =>
 {
     return (
     <div className="how-find-form form-padding">
-        <Select native required variant="outlined" className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
-            <option value="" disabled selected>How did you hear about Bridge?</option>
-            <option value="Google">Google</option>
-            <option value="Facebook">Facebook</option>
-            <option value="LinkedIn">LinkedIn</option>
-            <option value="Instagram">Instagram</option>
-            <option value="From a colleague">From a colleague</option>
-            <option value="From a friend">From a friend</option>
-            <option value="From my organization">From my organization</option>
-            <option value="Other">Other</option>
-        </Select>
+        <FormControl>
+            <InputLabel style={{paddingLeft: "1rem"}}>How did you hear about Bridge?</InputLabel>
+            <Select native variant="outlined" className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{height:"75.5%", width: "33rem"}}>
+                <option value="" disabled selected></option>
+                <option value="Google">Google</option>
+                <option value="Facebook">Facebook</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Instagram">Instagram</option>
+                <option value="From a colleague">From a colleague</option>
+                <option value="From a friend">From a friend</option>
+                <option value="From my organization">From my organization</option>
+                <option value="Other">Other</option>
+            </Select>
+        </FormControl>
     </div>
     );
 }
@@ -145,13 +148,18 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                           </div>
                                           <div className="info-form form-padding">
                                               <TextField variant="outlined" required placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
-                                              <Select native autoWidth required variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type" style={{color: "#A9A9A9"}}>
-                                                  <option value="" disabled selected>Provider type</option>                                        
-                                                  <option value="Counselor">Counselor</option>                                                    
-                                                  <option value="Psychiatrist">Psychiatrist</option>
-                                                  <option value="Psychologist">Psychologist</option>
-                                                  <option value="Therapist">Therapist</option>                                            
-                                              </Select>                                        
+                                              <FormControl>
+                                                <InputLabel style={{paddingLeft:"1rem"}}>Provider Type</InputLabel>
+                                                <Select native required variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" 
+                                                aria-label="provider type" style={{height:"75.5%", width:"11.5rem"}}>
+                                                    <option value="" disabled selected></option>                                        
+                                                    <option value="Counselor">Counselor</option>                                                    
+                                                    <option value="Psychiatrist">Psychiatrist</option>
+                                                    <option value="Psychologist">Psychologist</option>
+                                                    <option value="Therapist">Therapist</option>                                            
+                                                </Select>                                        
+                                              </FormControl>
+                                              
                                           </div>
                                           <div className="loc-form form-padding">
                                               <StateDropDown>

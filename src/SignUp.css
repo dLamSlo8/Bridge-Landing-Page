@@ -38,19 +38,16 @@ div.wireframe > img
 .info-form
 {
   display: flex;
-  padding-bottom: 0.5rem;
 }
 
 .loc-form
 {
   display: flex;
-  padding-bottom: 0.5rem;
 }
 
 .how-find-form
 {
   display: flex;
-  padding-bottom: 0.5rem;
 }
 
 .name-form-items
@@ -62,7 +59,7 @@ div.wireframe > img
 .info-form-email
 {
   flex-basis: 60%;
-  padding: 0.5rem;
+  padding: 0.5rem;  
 }
 
 .info-form-provider
