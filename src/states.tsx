@@ -1,6 +1,8 @@
 import React from 'react';
 import "./App.css";
 import "./SignUp.css";
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
 
 class StateDropDown extends React.Component<{}, {}> 
 {
@@ -11,7 +13,7 @@ class StateDropDown extends React.Component<{}, {}>
     render() 
     {
         return (
-            <select className="loc-form-states" style={{marginRight: "1.5rem"}} name="states" aria-label="states">
+            <Select native autoWidth variant="outlined" className="loc-form-states" style={{color:"#A9A9A9"}} name="states" aria-label="states">
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -64,7 +66,7 @@ class StateDropDown extends React.Component<{}, {}>
                 <option value="WV">West Virginia</option>
                 <option value="WI">Wisconsin</option>
                 <option value="WY">Wyoming</option>
-            </select>	
+            </Select>	
         )
     }
 }

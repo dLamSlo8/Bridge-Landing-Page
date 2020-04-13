@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, Popup} from 'semantic-ui-react'
+import {Select, MenuItem, TextField, InputLabel }from '@material-ui/core/';
 import "./App.css";
 import "./SignUp.css";
 import wireframeGraphic from "./static/wireframeGraphic@2x.png"
@@ -9,12 +10,13 @@ import linkedin from "./static/LinkedIn@2x.png"
 import logo from "./static/bridge_logo_1.0_singleColor_white.png"
 import StateDropDown from './states'
 import axios from 'axios';
+import { FormControl } from '@material-ui/core';
 
 const FindBridge: React.FC = () =>
 {
     return (
     <div className="how-find-form form-padding">
-        <select className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?">
+        <Select native variant="outlined" className="how-find-form-dropmenu" name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
             <option value="" disabled selected>How did you hear about Bridge?</option>
             <option value="Google">Google</option>
             <option value="Facebook">Facebook</option>
@@ -24,7 +26,7 @@ const FindBridge: React.FC = () =>
             <option value="From a friend">From a friend</option>
             <option value="From my organization">From my organization</option>
             <option value="Other">Other</option>
-        </select>
+        </Select>
     </div>
     );
 }
@@ -89,23 +91,23 @@ class SignUp extends React.Component<{}, {}>
                                 <form onSubmit={this.handleSubmit}>
                                     <label>
                                         <div className="name-form">
-                                            <input type="text" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
-                                            <input type="text" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
+                                            <TextField variant="outlined" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
+                                            <TextField variant="outlined" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
                                         </div>
                                         <div className="info-form form-padding">
-                                            <input type="text" placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>
-                                            <select className="info-form-provider" name="providerType" aria-label="provider type">
+                                            <TextField variant="outlined" placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
+                                            <Select native autoWidth variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type" style={{color: "#A9A9A9"}}>
                                                 <option value="" disabled selected>Provider type</option>                                        
                                                 <option value="Counselor">Counselor</option>                                                    
                                                 <option value="Psychiatrist">Psychiatrist</option>
                                                 <option value="Psychologist">Psychologist</option>
                                                 <option value="Therapist">Therapist</option>                                            
-                                            </select>
+                                            </Select>                                        
                                         </div>
                                         <div className="loc-form form-padding">
                                             <StateDropDown>
                                             </StateDropDown>
-                                            <input type="text" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
+                                            <TextField variant="outlined" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
                                         </div>
                                         <FindBridge></FindBridge>
                                     </label>

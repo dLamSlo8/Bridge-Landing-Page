@@ -74,14 +74,16 @@ div.wireframe > img
 
 .loc-form-states
 {
-  flex-basis: 20%;
+  flex-basis: 40%;
   padding: 0.5rem;
   color: gray;
+  margin-right: 1.5rem;
+  font-size: calc(0.7rem + 0.3vw);  
 }
 
 .loc-form-city
 {
-  flex-basis: 80%;
+  flex-basis: 60%;
   padding: 0.5rem;
   color: gray;
 }
