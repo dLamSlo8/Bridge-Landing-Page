@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import 'normalize.css';
 import logo from './logo.svg';
 import SignUp from './SignUp';
@@ -9,6 +10,9 @@ import CopyrightBar from './CopyrightBar';
 import SmoothScroll from 'smooth-scroll';
 import Header from './Header';
 import './App.css';
+
+ReactGA.initialize('UA-163426036-1'); // put your tracking id here
+ReactGA.pageview("landing");  
 
 class App extends React.Component<{}, {}> {
   constructor(props: any)
