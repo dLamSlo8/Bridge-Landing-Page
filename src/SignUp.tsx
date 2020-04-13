@@ -44,17 +44,35 @@ const PopupText: React.FC = () =>
     );
 }
 
-class SignUp extends React.Component<{}, {}> 
+class SignUp extends React.Component<{}, {submitted: boolean,
+                                          validate: {[name: string]: boolean}}> 
 {
 
     constructor(props: any)
     {
         super(props);
+        this.state = {
+            submitted: false,
+            validate: {
+               first_name: false,
+               last_name: false,
+               email: false,
+               provider: false,
+               state: false,
+               city: false,
+               discover_reason: false
+            }
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e: React.SyntheticEvent) {
         e.preventDefault();
         let target = e.target as any;
+        let valid = false;
+        let emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
         let formData = {
             first_name: target.firstName.value,
             last_name: target.lastName.value,
@@ -64,13 +82,35 @@ class SignUp extends React.Component<{}, {}>
             city: target.city.value,
             discover_reason: target.howFoundBridge.value
         }
-        console.log(formData);
-        axios.post("https://pont-bridge.appspot.com/api/subscriber/create",
-        formData)
-        .then((res: any) => {
-            console.log(res);
-            console.log(res.data);
-        })
+        
+         this.setState({validate: {
+            first_name: !!formData.first_name,
+            last_name: !!formData.last_name,
+            email: !!formData.email && emailRegex.test(formData.email),
+            provider: !!formData.provider,
+            state: !!formData.state,
+            city: !!formData.city,
+            discover_reason: !!formData.discover_reason
+            }}, () => {
+            console.log(this.state.validate);
+            console.log(formData);
+
+            valid = !Object.values(this.state.validate).some((value: boolean) => !value);
+            if (valid) {
+               console.log("Valid data!");
+               axios.post("https://pont-bridge.appspot.com/api/subscriber/create",
+               formData)
+               .then((res: any) => {
+                   console.log(res);
+                   console.log(res.data);
+               })
+               this.setState({submitted: true});
+            }
+            else {
+               console.log("Not valid data!");
+            }
+            }
+         );
     }
 
     render() 
@@ -78,50 +118,63 @@ class SignUp extends React.Component<{}, {}>
         return (
                 <div id="signup">
                     <div className="signup-form">
-                        <div>
-                            <div>
-                                <h3 className="header-heavy" style={{color: "black"}}>
-                                    Ready to join your colleagues?
-                                </h3>
-                                <p className="body-text" style={{color: "var(--light-gray)"}}>
-                                    For more details and updates on product launches join our mailing list     
-                                </p>
-                            </div>
-                            <div>
-                                <form onSubmit={this.handleSubmit}>
-                                    <label>
-                                        <div className="name-form">
-                                            <TextField required variant="outlined" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
-                                            <TextField required variant="outlined" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
-                                        </div>
-                                        <div className="info-form form-padding">
-                                            <TextField variant="outlined" required placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
-                                            <Select native autoWidth required variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type" style={{color: "#A9A9A9"}}>
-                                                <option value="" disabled selected>Provider type</option>                                        
-                                                <option value="Counselor">Counselor</option>                                                    
-                                                <option value="Psychiatrist">Psychiatrist</option>
-                                                <option value="Psychologist">Psychologist</option>
-                                                <option value="Therapist">Therapist</option>                                            
-                                            </Select>                                        
-                                        </div>
-                                        <div className="loc-form form-padding">
-                                            <StateDropDown>
-                                            </StateDropDown>
-                                            <TextField required variant="outlined" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
-                                        </div>
-                                        <FindBridge></FindBridge>
-                                    </label>
-                                    <div className="d-flex flex-start form-padding">
-                                        <input type="submit" className="land-btn submit-button" value="Submit"></input>                                        
-                                    </div>
-                            </form>
-                        </div>
+                        
+                       {
+                          this.state.submitted ? (
+                             <div className="d-flex flex-cross-center submitted-text">
+                                 <h3 className="header-heavy" style={{color: "black"}}>
+                                    Thank you for joining our mailing list. Please look forward to future updates to Bridge!</h3>
+                              </div>
+                          ) :
+                     
+                           (<div>
+                              <div>
+                                  <h3 className="header-heavy" style={{color: "black"}}>
+                                      Ready to join your colleagues?
+                                  </h3>
+                                  <p className="body-text" style={{color: "var(--light-gray)"}}>
+                                      For more details and updates on product launches join our mailing list     
+                                  </p>
+                              </div>
+                              <div>
+                                  <form onSubmit={this.handleSubmit}>
+                                      <label>
+                                          <div className="name-form">
+                                              <TextField required variant="outlined" placeholder="First Name"className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/>                                                                                                    
+                                              <TextField required variant="outlined" placeholder="Last Name" className="name-form-items" aria-label="last name" name="lastName"/>
+                                          </div>
+                                          <div className="info-form form-padding">
+                                              <TextField variant="outlined" required placeholder="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/>                                    
+                                              <Select native autoWidth required variant="outlined" labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type" style={{color: "#A9A9A9"}}>
+                                                  <option value="" disabled selected>Provider type</option>                                        
+                                                  <option value="Counselor">Counselor</option>                                                    
+                                                  <option value="Psychiatrist">Psychiatrist</option>
+                                                  <option value="Psychologist">Psychologist</option>
+                                                  <option value="Therapist">Therapist</option>                                            
+                                              </Select>                                        
+                                          </div>
+                                          <div className="loc-form form-padding">
+                                              <StateDropDown>
+                                              </StateDropDown>
+                                              <TextField required variant="outlined" placeholder="City" className="loc-form-city" name="city" aria-label="city"/>
+                                          </div>
+                                          <FindBridge></FindBridge>
+                                      </label>
+                                      <div className="d-flex flex-start form-padding">
+                                          <input type="submit" className="land-btn submit-button" value="Submit"></input>                                        
+                                      </div>
+                              </form>
+                          </div>
 
-                        </div>
+                           </div>
+                           )
+                        }
                         <div className="wireframe">
                             <img src={wireframeGraphic} alt=""/>
                         </div>
+
                     </div>
+                          
                     <div className="bot-bar" style={{textAlign:"center", marginTop:"5em"}}>
                         <div className="d-flex flex-space-around flex-wrap">
                             <img src={logo} alt=""/>                                                    

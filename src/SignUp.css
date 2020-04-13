@@ -191,6 +191,17 @@ div.bot-bar > div > img
    {
       margin-right: 0em;
    }
+   div.signup-form .submitted-text {
+      text-align: center;
+   }
+   
+}
+
+@media screen and (min-width: 990px)
+{
+   div.signup-form .submitted-text {
+      margin-top: 0;
+   }
 }
 @media screen and (max-width: 640px)
 {
