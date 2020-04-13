@@ -15,12 +15,12 @@ class Header extends React.Component<{}, {}> {
             <header className="land-header">
                   <img 
                   className="land-logo" src={logo} alt="Bridge Logo"/>
-               <nav
+               {/* <nav
                className="flex flex-cross-center">
                   <a 
                   className="land-btn land-header-btn"
                   href="#">Login</a>
-               </nav>
+               </nav> */}
             </header>
             <div className="land-header-section">
                <div className="land-header-images">
