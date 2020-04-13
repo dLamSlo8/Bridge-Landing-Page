@@ -17,6 +17,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-ga": "^2.7.0",
     "react-scripts": "3.3.0",
     "semantic-ui-react": "^0.88.2",
     "smooth-scroll": "^16.1.2",
