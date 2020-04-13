@@ -13,7 +13,7 @@ class StateDropDown extends React.Component<{}, {}>
     render() 
     {
         return (
-            <Select native autoWidth variant="outlined" className="loc-form-states" style={{color:"#A9A9A9"}} name="states" aria-label="states">
+            <Select native autoWidth required variant="outlined" className="loc-form-states" style={{color:"#A9A9A9"}} name="states" aria-label="states">
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
