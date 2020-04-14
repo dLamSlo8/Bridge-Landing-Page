@@ -13,6 +13,7 @@
 .land-logo {
    min-width: 200px;
    width: 20vw;
+   height: 12vh;
    object-fit: contain;
 }
 
