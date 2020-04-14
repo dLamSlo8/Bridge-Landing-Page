@@ -27,6 +27,7 @@ div.signup-form > div:first-child
 div.wireframe > img
 {
   max-width: 100%;
+  object-fit: contain;
 }
 
 .name-form
@@ -67,6 +68,8 @@ div.wireframe > img
   flex-basis: 40%;
   padding: 0.5rem;
   color: gray;
+  height: 3.5rem;
+  width: 11.5rem
 }
 
 .loc-form-states
@@ -76,13 +79,14 @@ div.wireframe > img
   color: gray;
   margin-right: 1.5rem;
   font-size: calc(0.7rem + 0.3vw);  
+  height: 3.5rem;
+  width:calc(10rem+2vw)
 }
 
 .loc-form-city
 {
   flex-basis: 60%;
   padding: 0.5rem;
-  color: gray;
 }
 
 .how-find-form-dropmenu
