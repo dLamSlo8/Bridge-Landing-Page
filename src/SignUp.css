@@ -235,7 +235,13 @@ div.bot-bar > div > img
 
   div.bot-bar > div > img
   {
-    width: 70%
+    width: 70%;
+  }
+
+  div.info-form-provider
+  {
+    font-size: 0.5rem;
+    width: 9rem;
   }
 
 }
