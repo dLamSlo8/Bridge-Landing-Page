@@ -197,8 +197,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                                 validate.provider ?
                                                 <FormControl variant="outlined">
                                                    <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type"
-                                                   style={{height: "75.5%", width: "11.5rem"}}>
+                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type">
                                                       <option value="" disabled selected />                                     
                                                       <option value="Counselor">Counselor</option>                                                    
                                                       <option value="Psychiatrist">Psychiatrist</option>
@@ -208,8 +207,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                                 </FormControl> :
                                                 <FormControl variant="outlined" error>
                                                    <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type"
-                                                   style={{height: "75.5%", width: "11.5rem"}}>
+                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type">                                                   >
                                                       <option value="" disabled selected />                                     
                                                       <option value="Counselor">Counselor</option>                                                    
                                                       <option value="Psychiatrist">Psychiatrist</option>
