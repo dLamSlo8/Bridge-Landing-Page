@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import "./App.css";
 import './Header.css';
 import logo from "./static/bridge_logo.png";
@@ -40,7 +41,10 @@ class Header extends React.Component<{}, {}> {
                   <h4 className="body-heavy">The professional networking platform and client management tool suite for mental healthcare providers</h4>
                   <a 
                   className="land-btn land-join-btn"
-                  href="#signup">Join</a>
+                  href="#signup"
+                  onClick={ () =>  ReactGA.event({
+                     category: 'User',
+                     action: 'Join'})}>Join</a>
                </div>
 
             </div>
