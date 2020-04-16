@@ -5,6 +5,7 @@ import "./Features.css";
 import contact from "./static/feature-contact.svg";
 import message from "./static/feature-message.svg";
 import referral from "./static/feature-referral.svg";
+ReactGA.initialize('UA-163426036-1'); 
 
 class Features extends React.Component<{}, {}> {
 

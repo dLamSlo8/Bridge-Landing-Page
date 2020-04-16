@@ -11,7 +11,7 @@ import SmoothScroll from 'smooth-scroll';
 import Header from './Header';
 import './App.css';
 
-ReactGA.initialize('UA-163426036-1'); // put your tracking id here
+ReactGA.initialize('UA-163426036-1');
 ReactGA.pageview("landing");  
 
 class App extends React.Component<{}, {}> {

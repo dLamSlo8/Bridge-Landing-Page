@@ -7,6 +7,7 @@ import border from "./static/header-image-gradient-border.png";
 import overlay from "./static/header-image-gradient-overlay.png";
 import header from "./static/header-image.jpg";
 import chat from "./static/header-chat-image.png";
+ReactGA.initialize('UA-163426036-1'); 
 
 class Header extends React.Component<{}, {}> {
 
