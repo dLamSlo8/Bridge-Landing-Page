@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import "./App.css";
 import "./Features.css";
 import contact from "./static/feature-contact.svg";
@@ -40,7 +41,9 @@ class Features extends React.Component<{}, {}> {
                className="header-bold">Connect, communicate, and collaborate on a 
                modern, HIPAA-compliant platform.</h3>
                <a 
-               className="land-btn land-get-started-btn" href="#signup">Get Started</a>
+               className="land-btn land-get-started-btn" href="#signup" onClick={ () =>  ReactGA.event({
+                  category: 'User',
+                  action: 'Get Started'})}>Get Started</a>
             </div>
          </div>
       )
