@@ -111,7 +111,7 @@ div.value-clients > img
 
     div.value-colleagues
     {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;                
     }
 
@@ -127,7 +127,7 @@ div.value-clients > img
 
     div.value-availability
     {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;                
     }
 
@@ -143,7 +143,7 @@ div.value-clients > img
 
     div.value-clients
     {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;                
     }
 
