@@ -33,7 +33,17 @@ div.wireframe > img
 .name-form
 {
   display:flex;
-  padding-bottom: 0.5rem
+}
+
+div.name-form > .name-form-first
+{
+  flex-basis: 50%;
+  margin-right: 1.5rem;
+}
+
+div.name-form > .name-form-last
+{
+  flex-basis: 50%;
 }
 
 .info-form
@@ -41,9 +51,36 @@ div.wireframe > img
   display: flex;
 }
 
+div.info-form > .info-form-email
+{
+  flex-basis: 50%;
+  margin-right: 1.5rem;  
+}
+
+div.info-form > .info-form-provider 
+{
+  flex-basis: 50%;
+}
+
 .loc-form
 {
   display: flex;
+}
+
+div.loc-form > .loc-form-states
+{
+  flex-basis: 50%;
+  margin-right: 1.5rem;
+}
+
+div.loc-form > .loc-form-city
+{
+  flex-basis: 50%;  
+}
+
+div.loc-form > .loc-form-states-label
+{
+   font-size: 0.2rem;
 }
 
 .how-find-form
@@ -51,51 +88,9 @@ div.wireframe > img
   display: flex;
 }
 
-.name-form-items
-{
-  flex-basis: 50%;
-  padding: 0.5rem;
-}
-
-.info-form-email
-{
-  flex-basis: 50%;
-  padding: 0.5rem;  
-}
-
-.info-form-provider 
-{
-  flex-basis: 50%;
-  padding: 0.5rem;
-  color: gray;
-}
-
-
-.loc-form-states
-{
-  flex-basis: 50%;
-  padding: 0.5rem;
-  color: gray;
-
-}
-
-.loc-form-states-label
-{
-   font-size: 0.2rem;
-}
-
-.loc-form-city
-{
-  flex-basis: 50%;
-  padding: 0.5rem;
-  color: gray;
-}
-
-.how-find-form-dropmenu
+div.how-find-form > .how-find-form-dropmenu
 {
   flex-basis: 100%;
-  padding: 0.5rem;
-  color: gray;
 }
 
 .submit-button
@@ -239,6 +234,50 @@ div.bot-bar > div > img
   {
     width: 70%;
   }
-
 }
 
+@media screen and (max-width: 400px)
+{
+  div.signup-form
+  {
+    padding: 0 2em;
+  }
+
+  div.name-form
+  {
+    flex-direction: column;    
+  }
+
+  div.name-form > .name-form-first
+  {
+    margin-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  div.info-form
+  {
+    flex-direction: column;
+  }
+
+  div.info-form > .info-form-email
+  {
+    margin-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  div.loc-form
+  {
+    flex-direction: column;
+  }
+
+  div.loc-form > .loc-form-states
+  {
+    margin-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  div.how-find-form
+  {
+    flex-direction: column;
+  }
+}

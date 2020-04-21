@@ -39,7 +39,7 @@ class ValueProps extends React.Component<{}, {}>
                 <div className="value-clients"> 
                     <div className="d-flex flex-column flex-center" style={{flexBasis: "30%"}}>
                         <h3 className="header-bold">
-                            Accept the right clients for you</h3>
+                            Accept the right clients for your practice</h3>
                         <p className="body-text value-prop-para">
                             Receive appropriate referrals based on your preferences, availability, insurance type and specialties.
                         </p>                                                                

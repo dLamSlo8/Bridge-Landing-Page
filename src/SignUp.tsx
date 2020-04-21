@@ -181,21 +181,21 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                           <div className="name-form">
                                              {
                                                 validate.first_name ? 
-                                                <TextField variant="outlined" label="First Name" className="name-form-items" style={{marginRight: "1.5rem"}} aria-label="first name" name="firstName"/> :    
-                                                <TextField error id="outlined-error-helper-text" className="name-form-items" style={{marginRight: "1.5rem"}} label="First Name" helperText="Required field." variant="outlined"/>                                                                                                 
+                                                <TextField variant="outlined" label="First Name" className="name-form-first" aria-label="first name" name="firstName"/> :    
+                                                <TextField error id="outlined-error-helper-text" className="name-form-first" label="First Name" helperText="Required field." variant="outlined"/>                                                                                                 
                                              }
                                              {
                                                 validate.last_name ?
-                                                <TextField variant="outlined" label="Last Name" className="name-form-items" aria-label="last name" name="lastName"/> :
-                                                <TextField error id="outlined-error-helper-text" className="name-form-items" label="Last Name" helperText="Required field." variant="outlined"/>                                                                                                 
+                                                <TextField variant="outlined" label="Last Name" className="name-form-last" aria-label="last name" name="lastName"/> :
+                                                <TextField error id="outlined-error-helper-text" className="name-form-last" label="Last Name" helperText="Required field." variant="outlined"/>                                                                                                 
                                              }
 
                                           </div>
                                           <div className="info-form form-padding">
                                              {
                                                 validate.email_required && validate.email_valid ?
-                                                <TextField variant="outlined" label="Email" className="info-form-email" style={{marginRight: "1.5rem"}} aria-label="email" name="email"/> :                               
-                                                <TextField error id="outlined-error-helper-text" className="info-form-email" label="Email" helperText={!validate.email_required ? "Required field." : "Invalid email."} style={{marginRight: "1.5rem"}}  variant="outlined"/>                                                                            
+                                                <TextField variant="outlined" label="Email" className="info-form-email" aria-label="email" name="email"/> :                               
+                                                <TextField error id="outlined-error-helper-text" className="info-form-email" label="Email" helperText={!validate.email_required ? "Required field." : "Invalid email."} variant="outlined"/>                                                                            
                                              }
                                              {
                                                 validate.provider ?
@@ -212,7 +212,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                                 </FormControl> :
                                                 <FormControl variant="outlined" error className="info-form-provider">
                                                    <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType"  name="providerType" aria-label="provider type">                                                   >
+                                                   <Select label="Provider Type" native labelId="providerType"  name="providerType" aria-label="provider type">
                                                       <option value="" disabled selected />                                     
                                                       <option value="Counselor">Counselor</option>                                                    
                                                       <option value="Psychiatrist">Psychiatrist</option>
