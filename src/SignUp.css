@@ -27,6 +27,7 @@ div.signup-form > div:first-child
 div.wireframe > img
 {
   max-width: 100%;
+  object-fit: contain;
 }
 
 .name-form
