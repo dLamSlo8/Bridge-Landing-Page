@@ -5,7 +5,7 @@ import './Header.css';
 import logo from "./static/bridge_logo.png";
 import border from "./static/header-image-gradient-border.png";
 import overlay from "./static/header-image-gradient-overlay.png";
-import header from "./static/header-image.jpg";
+import header from "./static/header-image-new.jpg";
 import chat from "./static/header-chat-image.png";
 
 class Header extends React.Component<{}, {}> {
