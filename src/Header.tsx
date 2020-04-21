@@ -5,7 +5,7 @@ import './Header.css';
 import logo from "./static/bridge_logo.png";
 import border from "./static/header-image-gradient-border.png";
 import overlay from "./static/header-image-gradient-overlay.png";
-import header from "./static/header-image.jpg";
+import header from "./static/header-image-new.jpg";
 import chat from "./static/header-chat-image.png";
 
 class Header extends React.Component<{}, {}> {
@@ -38,7 +38,7 @@ class Header extends React.Component<{}, {}> {
                   <h1
                   style={{marginBottom: 0}} 
                   className="header-heavy">Consult. Refer. Grow.</h1>
-                  <h4 className="body-heavy" style={{fontSize: "calc(1.75rem + 0.1vw)", paddingLeft: "15rem", paddingRight:"15rem"}}>The professional networking platform and referral management tool suite for mental healthcare providers</h4>
+                  <h4 className="body-heavy professional-platform">The professional networking platform and referral management tool suite for mental healthcare providers</h4>
                   <a 
                   className="land-btn land-join-btn"
                   href="#signup"

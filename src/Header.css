@@ -15,6 +15,32 @@
    height: 25%;
 }
 
+.professional-platform {
+   font-size: calc(1.25rem + 0.75vw);
+   padding-left: 15rem;
+   padding-right: 15rem;
+}
+
+@media screen and (max-width: 980px) {
+   .professional-platform {
+      padding-left: 10rem;
+      padding-right: 10rem;
+   }
+}
+
+@media screen and (max-width: 840px) {
+   .professional-platform {
+      padding-left: 5rem;
+      padding-right: 5rem;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .professional-platform {
+      padding-left: 1rem;
+      padding-right: 1rem;
+   }
+}
 .land-header-btn {
    padding: 5px 20px; 
    color: var(--middle-purple);
@@ -75,7 +101,7 @@
    text-align: center;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 880px) {
    .land-text-overlay {
       position: absolute;
       top: 0;

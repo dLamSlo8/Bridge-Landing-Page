@@ -78,6 +78,13 @@ div.loc-form > .loc-form-city
   flex-basis: 50%;  
 }
 
+.loc-form-other
+{
+   width: 100%;
+   padding: 0.5rem;
+   color: gray;
+}
+
 div.loc-form > .loc-form-states-label
 {
    font-size: 0.2rem;
@@ -279,5 +286,10 @@ div.bot-bar > div > img
   div.how-find-form
   {
     flex-direction: column;
+  }
+
+  div.submit-form 
+  {
+     justify-content: center;
   }
 }
