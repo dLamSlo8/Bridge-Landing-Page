@@ -4,6 +4,7 @@ import "./SignUp.css";
 import {Select, FormControl, MenuItem, InputLabel} from '@material-ui/core/';
 import FormHelperText from '@material-ui/core/FormHelperText';
 
+
 class StateDropDown extends React.Component<{valid: boolean}, {}> 
 {
     constructor(props: any)
@@ -12,8 +13,11 @@ class StateDropDown extends React.Component<{valid: boolean}, {}>
         
     }
 
+
     render() 
     {
+
+
         return (
            this.props.valid ? 
             <FormControl className="loc-form-states" variant="outlined" style={{marginRight: "1.5rem"}}>
@@ -73,9 +77,9 @@ class StateDropDown extends React.Component<{valid: boolean}, {}>
                     <option value="WY">Wyoming</option>
                 </Select>	
             </FormControl> : 
-            <FormControl variant="outlined" error>
-                <InputLabel style={{paddingLeft: "1rem"}}>States</InputLabel>
-                <Select label="States" native  className="loc-form-states" name="states" aria-label="states" style={{height:"75.5%", width:"12rem"}}>
+            <FormControl className="loc-form-states" variant="outlined" error>
+                <InputLabel style={{paddingLeft: "1rem"}}>State</InputLabel>
+                <Select label="States" native name="states" aria-label="states">
                     <option value="" disabled selected></option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>

@@ -8,10 +8,11 @@ import instagram from "./static/Instagram.png"
 import facebook from "./static/Facebook.png"
 import linkedin from "./static/LinkedIn@2x.png"
 import logo from "./static/bridge_logo_1.0_singleColor_white.png"
-import StateDropDown from './states'
+import StateDropDown from './states';
 import axios from 'axios';
 import { FormControl } from '@material-ui/core';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import {withStyles, Theme, makeStyles, createStyles, createMuiTheme} from '@material-ui/core/styles';
 
 const FindBridge: React.FC<{valid: boolean, handleChange: (e: React.SyntheticEvent) => void}> = (props: any) =>
 {
@@ -113,7 +114,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
             provider: target.providerType.value,
             state: target.states.value,
             city: target.city.value,
-            discover_reason: target.howFoundBridge.value
+            discover_reason: this.state.other ? target.other.value : target.howFoundBridge.value
         }
         
          this.setState({validate: {
@@ -124,7 +125,8 @@ class SignUp extends React.Component<{}, {submitted: boolean,
             provider: !!formData.provider,
             state: !!formData.state,
             city: !!formData.city,
-            discover_reason: !!formData.discover_reason
+            discover_reason: !!formData.discover_reason,
+            other: this.state.other ? !!target.other.value : true
             }}, () => {
             console.log(this.state.validate);
             console.log(formData);
@@ -149,6 +151,8 @@ class SignUp extends React.Component<{}, {submitted: boolean,
 
     render() 
     {
+
+
        let validate = this.state.validate;
         return (
                 <div id="signup">
@@ -196,8 +200,9 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                              {
                                                 validate.provider ?
                                                 <FormControl variant="outlined" className="info-form-provider">
-                                                   <InputLabel >Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType" name="providerType" aria-label="provider type">
+                                                   <InputLabel>Provider Type</InputLabel>
+                                                   <Select label="Provider Type" native labelId="providerType"  name="providerType" aria-label="provider type"
+                                                   >
                                                       <option value="" disabled selected />                                     
                                                       <option value="Counselor">Counselor</option>                                                    
                                                       <option value="Psychiatrist">Psychiatrist</option>
