@@ -195,9 +195,9 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                              }
                                              {
                                                 validate.provider ?
-                                                <FormControl variant="outlined">
-                                                   <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type">
+                                                <FormControl variant="outlined" className="info-form-provider">
+                                                   <InputLabel >Provider Type</InputLabel>
+                                                   <Select label="Provider Type" native labelId="providerType" name="providerType" aria-label="provider type">
                                                       <option value="" disabled selected />                                     
                                                       <option value="Counselor">Counselor</option>                                                    
                                                       <option value="Psychiatrist">Psychiatrist</option>
@@ -205,9 +205,9 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                                       <option value="Therapist">Therapist</option>                                            
                                                    </Select>
                                                 </FormControl> :
-                                                <FormControl variant="outlined" error>
+                                                <FormControl variant="outlined" error className="info-form-provider">
                                                    <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType" className="info-form-provider" name="providerType" aria-label="provider type">                                                   >
+                                                   <Select label="Provider Type" native labelId="providerType"  name="providerType" aria-label="provider type">                                                   >
                                                       <option value="" disabled selected />                                     
                                                       <option value="Counselor">Counselor</option>                                                    
                                                       <option value="Psychiatrist">Psychiatrist</option>
@@ -223,8 +223,8 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                               <StateDropDown valid={validate.state} />
                                               {
                                                  validate.city ? 
-                                                 <TextField variant="outlined" placeholder="City" className="loc-form-city" style={{marginLeft: "1.5rem"}} name="city" aria-label="city"/> :
-                                                 <TextField error id="outlined-error-helper-text" className="loc-form-city" style={{marginLeft: "1.5rem"}} label="City" helperText="Required field." variant="outlined"/>                                                                            
+                                                 <TextField variant="outlined" label="City" className="loc-form-city" name="city" aria-label="city"/> :
+                                                 <TextField error id="outlined-error-helper-text" className="loc-form-city"  label="City" helperText="Required field." variant="outlined"/>                                                                            
                                               }
                                           </div>
                                           <FindBridge 
@@ -249,12 +249,12 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                     </div>
                           
                     <div className="bot-bar" style={{textAlign:"center", marginTop:"5em"}}>
-                        <div className="d-flex flex-space-around flex-wrap">
+                        <div className="d-flex flex-space-around flex-cross-center">
                             <img src={logo} alt=""/>                                                    
-                            <p style={{color: "white", paddingTop: "1em"}}>
+                            <p style={{color: "white"}}>
                                 Copyright © 2020 Bridge Technology, Inc. All Rights Reserved
                             </p>
-                            <div className="d-flex flex-column" style={{color:"white", fontSize:"1.2rem"}}>
+                            <div className="d-flex flex-column flex-space-around" style={{color:"white", fontSize:"1.2rem"}}>
                                 <span>
                                     Follow Us
                                 </span><br></br>
