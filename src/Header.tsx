@@ -38,7 +38,7 @@ class Header extends React.Component<{}, {}> {
                   <h1
                   style={{marginBottom: 0}} 
                   className="header-heavy">Consult. Refer. Grow.</h1>
-                  <h4 className="body-heavy" style={{fontSize: "calc(1.75rem + 0.1vw)", paddingLeft: "15rem", paddingRight:"15rem"}}>The professional networking platform and client management tool suite for mental healthcare providers</h4>
+                  <h4 className="body-heavy professional-platform">The professional networking platform and client management tool suite for mental healthcare providers</h4>
                   <a 
                   className="land-btn land-join-btn"
                   href="#signup"

@@ -287,4 +287,9 @@ div.bot-bar > div > img
   {
     flex-direction: column;
   }
+
+  div.submit-form 
+  {
+     justify-content: center;
+  }
 }
