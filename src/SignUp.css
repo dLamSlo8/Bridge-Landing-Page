@@ -59,33 +59,27 @@ div.wireframe > img
 
 .info-form-email
 {
-  flex-basis: 60%;
+  flex-basis: 50%;
   padding: 0.5rem;  
 }
 
 .info-form-provider 
 {
-  flex-basis: 40%;
+  flex-basis: 50%;
   padding: 0.5rem;
-  color: gray;
-  height: 3.5rem;
-  width: 11.5rem
+  color: gray;  
 }
 
 .loc-form-states
 {
-  flex-basis: 40%;
+  flex-basis: 50%;
   padding: 0.5rem;
   color: gray;
-  margin-right: 1.5rem;
-  font-size: calc(0.7rem + 0.3vw);  
-  height: 3.5rem;
-  width:calc(10rem+2vw)
 }
 
 .loc-form-city
 {
-  flex-basis: 60%;
+  flex-basis: 50%;
   padding: 0.5rem;
 }
 
@@ -238,11 +232,7 @@ div.bot-bar > div > img
     width: 70%;
   }
 
-  div.info-form-provider
-  {
-    font-size: 0.5rem;
-    width: 9rem;
-  }
+
 
 }
 
