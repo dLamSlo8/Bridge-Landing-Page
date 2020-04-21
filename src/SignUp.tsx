@@ -9,10 +9,10 @@ import facebook from "./static/Facebook.png"
 import linkedin from "./static/LinkedIn@2x.png"
 import logo from "./static/bridge_logo_1.0_singleColor_white.png"
 import StateDropDown from './states';
+import ProviderType from './provider';
 import axios from 'axios';
 import { FormControl } from '@material-ui/core';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import {withStyles, Theme, makeStyles, createStyles, createMuiTheme} from '@material-ui/core/styles';
 
 const FindBridge: React.FC<{valid: boolean, handleChange: (e: React.SyntheticEvent) => void}> = (props: any) =>
 {
@@ -154,6 +154,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
 
 
        let validate = this.state.validate;
+       console.log(validate.provider);
         return (
                 <div id="signup">
                     <div className="signup-form">
@@ -197,32 +198,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                                 <TextField variant="outlined" label="Email" className="info-form-email" aria-label="email" name="email"/> :                               
                                                 <TextField error id="outlined-error-helper-text" className="info-form-email" label="Email" helperText={!validate.email_required ? "Required field." : "Invalid email."} variant="outlined"/>                                                                            
                                              }
-                                             {
-                                                validate.provider ?
-                                                <FormControl variant="outlined" className="info-form-provider">
-                                                   <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType"  name="providerType" aria-label="provider type"
-                                                   >
-                                                      <option value="" disabled selected />                                     
-                                                      <option value="Counselor">Counselor</option>                                                    
-                                                      <option value="Psychiatrist">Psychiatrist</option>
-                                                      <option value="Psychologist">Psychologist</option>
-                                                      <option value="Therapist">Therapist</option>                                            
-                                                   </Select>
-                                                </FormControl> :
-                                                <FormControl variant="outlined" error className="info-form-provider">
-                                                   <InputLabel>Provider Type</InputLabel>
-                                                   <Select label="Provider Type" native labelId="providerType"  name="providerType" aria-label="provider type">
-                                                      <option value="" disabled selected />                                     
-                                                      <option value="Counselor">Counselor</option>                                                    
-                                                      <option value="Psychiatrist">Psychiatrist</option>
-                                                      <option value="Psychologist">Psychologist</option>
-                                                      <option value="Therapist">Therapist</option>                                            
-                                                   </Select>
-                                                   <FormHelperText>Required field.</FormHelperText>
-                                                </FormControl>
-                                             }
-                                    
+                                             <ProviderType valid={validate.provider} />
                                           </div>
                                           <div className="loc-form form-padding">
                                               <StateDropDown valid={validate.state} />
@@ -235,7 +211,11 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                           <FindBridge 
                                           valid={validate.discover_reason}
                                           handleChange={this.handleDiscoverChange}></FindBridge>
-                                          {this.state.other && <div className="form-padding"><TextField variant="outlined" label="Other reason" aria-label="other" name="other"/></div> }
+                                          {this.state.other && <div className="form-padding">
+                                             {validate.other ? 
+                                             <TextField variant="outlined" className="loc-form-other" label="Other Reason" aria-label="other" name="other"/> :
+                                             <TextField className="loc-form-other" error id="outlined-error-helper-text" label="Other Reason" helperText="Required field." variant="outlined" />}
+                                             </div> }
                                                               
                                       </label>
                                       <div className="d-flex flex-start form-padding">
