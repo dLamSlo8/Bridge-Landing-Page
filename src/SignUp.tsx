@@ -218,7 +218,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                              </div> }
                                                               
                                       </label>
-                                      <div className="d-flex flex-start form-padding">
+                                      <div className="d-flex flex-start form-padding submit-form">
                                           <input type="submit" className="land-btn submit-button" value="Submit"></input>                                        
                                       </div>
                               </form>

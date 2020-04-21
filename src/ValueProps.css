@@ -149,12 +149,19 @@ div.value-clients > img
 
     div.value-clients > div {
        align-items: center;
+       padding-left: 1rem;
+       padding-right: 1rem;
+       text-align: center;
     }
 
     div.value-clients > img
     {    
         width: 50%;
         height: 50%;
+    }
+
+    div.value-props {
+       padding-bottom: 1rem;
     }
 
 }
