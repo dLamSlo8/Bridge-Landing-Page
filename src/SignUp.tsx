@@ -162,7 +162,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                           this.state.submitted ? (
                              <div className="d-flex flex-cross-center submitted-text">
                                  <h3 className="header-heavy" style={{color: "black"}}>
-                                    Thank you for joining our mailing list. Please look forward to future updates to Bridge!</h3>
+                                    Thank you for joining our mailing list. Please look forward to future updates from Bridge!</h3>
                               </div>
                           ) :
                      
@@ -255,10 +255,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                           
                     <div className="bot-bar" style={{textAlign:"center", marginTop:"5em"}}>
                         <div className="d-flex flex-space-around flex-cross-center">
-                            <img src={logo} alt=""/>                                                    
-                            <p style={{color: "white"}}>
-                                Copyright © 2020 Bridge Technology, Inc. All Rights Reserved
-                            </p>
+                            <img src={logo} alt=""/>                                                                                
                             <div className="d-flex flex-column flex-space-around" style={{color:"white", fontSize:"1.2rem"}}>
                                 <span>
                                     Follow Us
