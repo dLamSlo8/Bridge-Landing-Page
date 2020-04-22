@@ -25,7 +25,7 @@ class Features extends React.Component<{}, {}> {
                <div>
                   <img src={referral} alt="Referral"/>
                   <h4 className="body-heavy">Referral Management Software</h4>
-                  <p className="body-text">Create accurate referrals, fast, find the best resources
+                  <p className="body-text">Create fast and accurate referrals, find the best resources
                   for your clients, and accept the right clients for your practice.</p>
                </div>
                <div>
