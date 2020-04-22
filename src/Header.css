@@ -100,7 +100,11 @@
    color: white;
    text-align: center;
 }
-
+@media screen and (min-width: 1800px) {
+   .land-text-overlay {
+      justify-content: center;
+   }
+}
 @media screen and (min-width: 880px) {
    .land-text-overlay {
       position: absolute;

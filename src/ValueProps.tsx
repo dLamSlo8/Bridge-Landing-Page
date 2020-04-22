@@ -26,7 +26,7 @@ class ValueProps extends React.Component<{}, {}>
                     <img src={collaborate} alt=""></img>                
                 </div>
                 <div className="value-availability">                
-                    <img src={availability} alt=""></img>    
+                    <img src={availability} alt="" /> 
                     <div className="d-flex flex-column flex-center" style={{flexBasis: "30%"}}>
                         <h3 className="header-bold">
                            Set your availability
