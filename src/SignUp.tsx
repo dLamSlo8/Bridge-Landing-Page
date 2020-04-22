@@ -112,7 +112,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
             last_name: target.lastName.value,
             email: target.email.value,
             provider: target.providerType.value,
-            state: target.states.value,
+            state: target.state.value,
             city: target.city.value,
             discover_reason: this.state.other ? target.other.value : target.howFoundBridge.value
         }
