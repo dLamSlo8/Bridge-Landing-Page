@@ -22,7 +22,7 @@ class StateDropDown extends React.Component<{valid: boolean}, {}>
            this.props.valid ? 
             <FormControl className="loc-form-states" variant="outlined">
                 <InputLabel>State</InputLabel>
-                <Select label="State" native name="states" aria-label="states">
+                <Select label="State" native name="state" aria-label="state">
                     <option value="" disabled selected></option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
