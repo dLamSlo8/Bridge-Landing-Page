@@ -85,6 +85,13 @@ div.loc-form > .loc-form-city
    color: gray;
 }
 
+.loc-form-other-provider
+{
+   display: block;
+   width: 100%;
+   padding: 0.5rem;
+   color: gray;
+}
 div.loc-form > .loc-form-states-label
 {
    font-size: 0.2rem;

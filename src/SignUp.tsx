@@ -22,7 +22,7 @@ const FindBridge: React.FC<{valid: boolean, handleChange: (e: React.SyntheticEve
           { props.valid ? 
             <FormControl variant="outlined" className="how-find-form-dropmenu">
                <InputLabel>How did you hear about Bridge?</InputLabel>
-               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
+               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?">
                      <option value="" disabled selected />
                      <option value="Google">Google</option>
                      <option value="Facebook">Facebook</option>
@@ -36,7 +36,7 @@ const FindBridge: React.FC<{valid: boolean, handleChange: (e: React.SyntheticEve
             </FormControl> :
             <FormControl variant="outlined" error className="how-find-form-dropmenu">
                <InputLabel>How did you hear about Bridge?</InputLabel>
-               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?" style={{color: "#A9A9A9"}}>
+               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?">
                      <option value="" disabled selected />
                      <option value="Google">Google</option>
                      <option value="Facebook">Facebook</option>
@@ -71,7 +71,8 @@ const PopupText: React.FC = () =>
 
 class SignUp extends React.Component<{}, {submitted: boolean,
                                           validate: {[name: string]: boolean},
-                                          other: boolean}> 
+                                          other_discover: boolean,
+                                          other_provider: boolean}> 
 {
     constructor(props: any)
     {
@@ -87,18 +88,27 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                state: true,
                city: true,
                discover_reason: true,
-               other: true
+               other_discover: true,
+               other_provider: true
             },
-            other: false
+            other_discover: false,
+            other_provider: false
         }
         this.handleDiscoverChange = this.handleDiscoverChange.bind(this);
+        this.handleProviderChange = this.handleProviderChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleDiscoverChange(e: React.SyntheticEvent) {
       e.preventDefault();
       let target = e.target as any;
-      this.setState({other: (target.value === "Other")});
+      this.setState({other_discover: (target.value === "Other")});
+    }
+
+    handleProviderChange(e: React.SyntheticEvent) {
+      e.preventDefault();
+      let target = e.target as any;
+      this.setState({other_provider: (target.value === "Other")});
     }
 
     handleSubmit(e: React.SyntheticEvent) {
@@ -111,10 +121,10 @@ class SignUp extends React.Component<{}, {submitted: boolean,
             first_name: target.firstName.value,
             last_name: target.lastName.value,
             email: target.email.value,
-            provider: target.providerType.value,
+            provider: this.state.other_provider ? target.other_provider.value : target.providerType.value,
             state: target.state.value,
             city: target.city.value,
-            discover_reason: this.state.other ? target.other.value : target.howFoundBridge.value
+            discover_reason: this.state.other_discover ? target.other_discover.value : target.howFoundBridge.value
         }
         
          this.setState({validate: {
@@ -126,7 +136,8 @@ class SignUp extends React.Component<{}, {submitted: boolean,
             state: !!formData.state,
             city: !!formData.city,
             discover_reason: !!formData.discover_reason,
-            other: this.state.other ? !!target.other.value : true
+            other_discover: this.state.other_discover ? !!target.other_discover.value : true,
+            other_provider: this.state.other_provider ? !!target.other_provider.value : true
             }}, () => {
             console.log(this.state.validate);
             console.log(formData);
@@ -151,10 +162,7 @@ class SignUp extends React.Component<{}, {submitted: boolean,
 
     render() 
     {
-
-
        let validate = this.state.validate;
-       console.log(validate.provider);
         return (
                 <div id="signup">
                     <div className="signup-form">
@@ -198,8 +206,17 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                                 <TextField variant="outlined" label="Email" className="info-form-email" aria-label="email" name="email"/> :                               
                                                 <TextField error id="outlined-error-helper-text" className="info-form-email" label="Email" helperText={!validate.email_required ? "Required field." : "Invalid email."} variant="outlined"/>                                                                            
                                              }
-                                             <ProviderType valid={validate.provider} />
+                                             <ProviderType 
+                                             valid={validate.provider}
+                                             handleChange={this.handleProviderChange} />
+
                                           </div>
+                                          {
+                                             this.state.other_provider && <div className="form-padding">
+                                                {validate.other_provider ?
+                                                <TextField variant="outlined" className="loc-form-other-provider" label="Other Provider Type" aria-label="other" name="other_provider"/> :
+                                                <TextField className="loc-form-other-provider" error id="outlined-error-helper-text" label="Other Provider Type" name="other_provider" helperText="Required field." variant="outlined" />}
+                                                </div> }
                                           <div className="loc-form form-padding">
                                               <StateDropDown valid={validate.state} />
                                               {
@@ -211,10 +228,10 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                           <FindBridge 
                                           valid={validate.discover_reason}
                                           handleChange={this.handleDiscoverChange}></FindBridge>
-                                          {this.state.other && <div className="form-padding">
-                                             {validate.other ? 
-                                             <TextField variant="outlined" className="loc-form-other" label="Other Reason" aria-label="other" name="other"/> :
-                                             <TextField className="loc-form-other" error id="outlined-error-helper-text" label="Other Reason" helperText="Required field." variant="outlined" />}
+                                          {this.state.other_discover && <div className="form-padding">
+                                             {validate.other_discover ? 
+                                             <TextField variant="outlined" className="loc-form-other" label="Other Reason" aria-label="other" name="other_discover"/> :
+                                             <TextField className="loc-form-other" error id="outlined-error-helper-text" label="Other Reason" name="other_discover" helperText="Required field." variant="outlined" />}
                                              </div> }
                                                               
                                       </label>

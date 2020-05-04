@@ -2,7 +2,7 @@
 .land-header {
    display: flex;
    justify-content: space-between;
-   padding: 1em 2em 1em 1.25em;
+   padding: 0.5em;
 }
 
 @media screen and (max-width: 480px) {
@@ -11,7 +11,7 @@
    }
 }
 .land-logo {
-   width: 8em;
+   width: 10em;
 }
 
 .professional-platform {
