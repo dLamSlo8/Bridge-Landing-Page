@@ -5,15 +5,18 @@
    padding: 0.5em;
 }
 
+
+.land-logo {
+   width: 15em;
+}
 @media screen and (max-width: 480px) {
    .land-header {
       padding: 1em 1em 1em 0.25em;
    }
+   .land-logo {
+      width: 10em;
+   }
 }
-.land-logo {
-   width: 10em;
-}
-
 .professional-platform {
    font-size: calc(1.25rem + 0.75vw);
    padding-left: 15rem;
