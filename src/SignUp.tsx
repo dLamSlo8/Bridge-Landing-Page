@@ -1,124 +1,277 @@
 import React from 'react';
+import {Button, Popup} from 'semantic-ui-react'
+import {Select, MenuItem, TextField, InputLabel }from '@material-ui/core/';
 import "./App.css";
 import "./SignUp.css";
-import s_phone from "./static/slanted_phone.png"
-import socials from "./static/socials.png"
-import StateDropDown from './states'
+import wireframeGraphic from "./static/wireframeGraphic@2x.png"
+import instagram from "./static/Instagram.png"
+import facebook from "./static/Facebook.png"
+import linkedin from "./static/LinkedIn@2x.png"
+import logo from "./static/bridge_logo_1.0_singleColor_white.png"
+import StateDropDown from './states';
+import ProviderType from './provider';
+import axios from 'axios';
+import { FormControl } from '@material-ui/core';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
-const FindBridge: React.FC = () =>
+const FindBridge: React.FC<{valid: boolean, handleChange: (e: React.SyntheticEvent) => void}> = (props: any) =>
 {
     return (
-    <div className="how-find-form">
-        <select className="how-find-form-dropmenu">
-            <option value="" disabled selected>How did you hear about Bridge?</option>
-            <option value="GG">Google</option>
-            <option value="FB">Facebook</option>
-            <option value="LI">LinkedIn</option>
-            <option value="IG">Instagram</option>
-            <option value="FC">From a colleague</option>
-            <option value="FF">From a friend</option>
-            <option value="FO">From my organization</option>
-            <option value="OR">Other</option>
-        </select>
+    <div className="how-find-form form-padding">
+       
+          { props.valid ? 
+            <FormControl variant="outlined" className="how-find-form-dropmenu">
+               <InputLabel>How did you hear about Bridge?</InputLabel>
+               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?">
+                     <option value="" disabled selected />
+                     <option value="Google">Google</option>
+                     <option value="Facebook">Facebook</option>
+                     <option value="LinkedIn">LinkedIn</option>
+                     <option value="Instagram">Instagram</option>
+                     <option value="From a colleague">From a colleague</option>
+                     <option value="From a friend">From a friend</option>
+                     <option value="From my organization">From my organization</option>
+                     <option value="Other">Other</option>
+               </Select> 
+            </FormControl> :
+            <FormControl variant="outlined" error className="how-find-form-dropmenu">
+               <InputLabel>How did you hear about Bridge?</InputLabel>
+               <Select label="How did you hear about Bridge?" native onChange={props.handleChange} name="howFoundBridge" aria-label="How did you hear about Bridge?">
+                     <option value="" disabled selected />
+                     <option value="Google">Google</option>
+                     <option value="Facebook">Facebook</option>
+                     <option value="LinkedIn">LinkedIn</option>
+                     <option value="Instagram">Instagram</option>
+                     <option value="From a colleague">From a colleague</option>
+                     <option value="From a friend">From a friend</option>
+                     <option value="From my organization">From my organization</option>
+                     <option value="Other">Other</option>
+               </Select>
+               <FormHelperText>Required field.</FormHelperText>
+            </FormControl>
+
+         }
+       
     </div>
     );
 }
 
-class HeaderNav extends React.Component<{}, {}> 
+const PopupText: React.FC = () =>
 {
+    return(
+    <Popup content='Thanks for joining!' hoverable={false}
+           trigger={<button type="submit" className="submit-button">Submit</button>}
+           on="click"
+           position="bottom center"
+           offset="0 25%"
+           opacity="1.0"
+           />
+    );
+}
 
+class SignUp extends React.Component<{}, {submitted: boolean,
+                                          validate: {[name: string]: boolean},
+                                          other_discover: boolean,
+                                          other_provider: boolean}> 
+{
     constructor(props: any)
     {
         super(props);
+        this.state = {
+            submitted: false,
+            validate: {
+               first_name: true,
+               last_name: true,
+               email_required: true,
+               email_valid: true,
+               provider: true,
+               state: true,
+               city: true,
+               discover_reason: true,
+               other_discover: true,
+               other_provider: true
+            },
+            other_discover: false,
+            other_provider: false
+        }
+        this.handleDiscoverChange = this.handleDiscoverChange.bind(this);
+        this.handleProviderChange = this.handleProviderChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    handleDiscoverChange(e: React.SyntheticEvent) {
+      e.preventDefault();
+      let target = e.target as any;
+      this.setState({other_discover: (target.value === "Other")});
+    }
+
+    handleProviderChange(e: React.SyntheticEvent) {
+      e.preventDefault();
+      let target = e.target as any;
+      this.setState({other_provider: (target.value === "Other")});
+    }
+
+    handleSubmit(e: React.SyntheticEvent) {
+        e.preventDefault();
+        let target = e.target as any;
+        let valid = false;
+        let emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
+        let formData = {
+            first_name: target.firstName.value,
+            last_name: target.lastName.value,
+            email: target.email.value,
+            provider: this.state.other_provider ? target.other_provider.value : target.providerType.value,
+            state: target.state.value,
+            city: target.city.value,
+            discover_reason: this.state.other_discover ? target.other_discover.value : target.howFoundBridge.value
+        }
+        
+         this.setState({validate: {
+            first_name: !!formData.first_name,
+            last_name: !!formData.last_name,
+            email_required: !!formData.email,
+            email_valid: emailRegex.test(formData.email),
+            provider: !!formData.provider,
+            state: !!formData.state,
+            city: !!formData.city,
+            discover_reason: !!formData.discover_reason,
+            other_discover: this.state.other_discover ? !!target.other_discover.value : true,
+            other_provider: this.state.other_provider ? !!target.other_provider.value : true
+            }}, () => {
+            console.log(this.state.validate);
+            console.log(formData);
+
+            valid = !Object.values(this.state.validate).some((value: boolean) => !value);
+            if (valid) {
+               console.log("Valid data!");
+               axios.post("https://pont-bridge.appspot.com/api/subscriber/create",
+               formData)
+               .then((res: any) => {
+                   console.log(res);
+                   console.log(res.data);
+               })
+               this.setState({submitted: true});
+            }
+            else {
+               console.log("Not valid data!");
+            }
+            }
+         );
+    }
+
     render() 
     {
+       let validate = this.state.validate;
         return (
-                <div>
-                    <div className="d-flex flex-center" style={{marginBottom:"100px"}}>
-                        <div style={{flexBasis:"30%", padding:"30px"}}>
-                            <div>
-                                <p className="d-flex flex-center x-large-text bold-text">
-                                    Ready to join your colleagues?
-                                </p>
-                            </div>
-                            <div>
-                                <form>
-                                    <label>
-                                        <div className="name-form">
-                                            <input type="text" placeholder="First Name"className="name-form-items"/>
-                                            <input type="text" placeholder="Last Name" className="name-form-items"/>
-                                        </div>
-                                        <div className="info-form">
-                                            <input type="text" placeholder="Email" className="info-form-email"/>
-                                            <select className="info-form-provider">
-                                                <option value="" disabled selected>Provider type</option>
-                                                <option value="ANP">ANP</option>
-                                                <option value="LCSW">LCSW</option>
-                                                <option value="LMFT">LMFT</option>
-                                                <option value="LMHC">LPA</option>
-                                                <option value="LPC">LPC</option>    
-                                                <option value="Ph.D">Ph.D</option>                                            
-                                                <option value="Psy.D">Psy.D</option>
-                                                <option value="Psycht">Psychiatrist</option>
-                                            </select>
-                                        </div>
-                                        <div className="loc-form">
-                                            <StateDropDown>
-                                            </StateDropDown>
-                                            <input type="text" placeholder="City" className="loc-form-city" />
-                                        </div>
-                                        <FindBridge></FindBridge>
-                                    </label>
-                                </form>
-                            </div>
-                            <div className="d-flex flex-end">
-                                <p style={{fontSize: "12px", fontWeight: "bold"}}>for more details
-                                <span style={{display: "inline-block", paddingLeft: "15px"}}><a href="#" className="submit-button">Submit</a></span></p>
-                            </div>
+                <div id="signup">
+                    <div className="signup-form">
+                        
+                       {
+                          this.state.submitted ? (
+                             <div className="d-flex flex-cross-center submitted-text">
+                                 <h3 className="header-heavy" style={{color: "black"}}>
+                                    Thank you for joining our mailing list. Please look forward to future updates from Bridge!</h3>
+                              </div>
+                          ) :
+                     
+                           (<div>
+                              <div>
+                                  <h3 className="header-heavy" style={{color: "black"}}>
+                                      Ready to join your colleagues?
+                                  </h3>
+                                  <p className="body-text" style={{color: "var(--light-gray)"}}>
+                                      For more details and updates on product launches join our mailing list     
+                                  </p>
+                              </div>
+                              <div>
+                                  <form onSubmit={this.handleSubmit}>
+                                      <label>
+                                          <div className="name-form">
+                                             {
+                                                validate.first_name ? 
+                                                <TextField variant="outlined" label="First Name" className="name-form-first" aria-label="first name" name="firstName"/> :    
+                                                <TextField error id="outlined-error-helper-text" className="name-form-first" label="First Name" helperText="Required field." variant="outlined"/>                                                                                                 
+                                             }
+                                             {
+                                                validate.last_name ?
+                                                <TextField variant="outlined" label="Last Name" className="name-form-last" aria-label="last name" name="lastName"/> :
+                                                <TextField error id="outlined-error-helper-text" className="name-form-last" label="Last Name" helperText="Required field." variant="outlined"/>                                                                                                 
+                                             }
+
+                                          </div>
+                                          <div className="info-form form-padding">
+                                             {
+                                                validate.email_required && validate.email_valid ?
+                                                <TextField variant="outlined" label="Email" className="info-form-email" aria-label="email" name="email"/> :                               
+                                                <TextField error id="outlined-error-helper-text" className="info-form-email" label="Email" helperText={!validate.email_required ? "Required field." : "Invalid email."} variant="outlined"/>                                                                            
+                                             }
+                                             <ProviderType 
+                                             valid={validate.provider}
+                                             handleChange={this.handleProviderChange} />
+
+                                          </div>
+                                          {
+                                             this.state.other_provider && <div className="form-padding">
+                                                {validate.other_provider ?
+                                                <TextField variant="outlined" className="loc-form-other-provider" label="Other Provider Type" aria-label="other" name="other_provider"/> :
+                                                <TextField className="loc-form-other-provider" error id="outlined-error-helper-text" label="Other Provider Type" name="other_provider" helperText="Required field." variant="outlined" />}
+                                                </div> }
+                                          <div className="loc-form form-padding">
+                                              <StateDropDown valid={validate.state} />
+                                              {
+                                                 validate.city ? 
+                                                 <TextField variant="outlined" label="City" className="loc-form-city" name="city" aria-label="city"/> :
+                                                 <TextField error id="outlined-error-helper-text" className="loc-form-city"  label="City" helperText="Required field." variant="outlined"/>                                                                            
+                                              }
+                                          </div>
+                                          <FindBridge 
+                                          valid={validate.discover_reason}
+                                          handleChange={this.handleDiscoverChange}></FindBridge>
+                                          {this.state.other_discover && <div className="form-padding">
+                                             {validate.other_discover ? 
+                                             <TextField variant="outlined" className="loc-form-other" label="Other Reason" aria-label="other" name="other_discover"/> :
+                                             <TextField className="loc-form-other" error id="outlined-error-helper-text" label="Other Reason" name="other_discover" helperText="Required field." variant="outlined" />}
+                                             </div> }
+                                                              
+                                      </label>
+                                      <div className="d-flex flex-start form-padding submit-form">
+                                          <input type="submit" className="land-btn submit-button" value="Submit"></input>                                        
+                                      </div>
+                              </form>
+                          </div>
+
+                           </div>
+                           )
+                        }
+                        <div className="wireframe">
+                            <img src={wireframeGraphic} alt=""/>
                         </div>
-                        <div style={{flexBasis:"30%"}} className="d-flex flex-center">
-                            <img src={s_phone} alt="" className="image"/>
-                        </div>
+
                     </div>
-                    <div className="bot-bar" style={{textAlign:"center"}}>
-                        <div className="d-flex">
-                            <div style={{marginRight:"30px"}}>
-                                <p style={{color:"white", fontSize:"12px"}}>
-                                    <span style={{ fontWeight:"bold"}}>
-                                        Features
-                                    </span><br></br>
-                                    <span style={{color:"white"}}>
-                                        Connect<br></br>
-                                        Availability<br></br>
-                                        Refer<br></br>
-                                        Accept
-                                    </span>
-                                </p>
-                            </div>
-                            <div>
-                            <p style={{color:"white", fontSize:"12px"}}>
-                                <span style={{ fontWeight:"bold"}}>
-                                    Benefits
+                          
+                    <div className="bot-bar" style={{textAlign:"center", marginTop:"5em"}}>
+                        <div className="d-flex flex-space-around flex-cross-center">
+                            <img src={logo} alt=""/>                                                                                
+                            <div className="d-flex flex-column flex-space-around" style={{color:"white", fontSize:"1.2rem"}}>
+                                <span>
+                                    Follow Us
                                 </span><br></br>
-                                <span style={{color:"white"}}>
-                                    Collaborate<br></br>
-                                    Referrals<br></br>
-                                    Growth<br></br>
-                                </span>
-                            </p>
-                            </div>
+                                <div style={{marginLeft: "0.8em"}}>
+                                <a href="https://www.instagram.com/yourbridge.io/" target="_blank">
+                                    <img src={instagram} alt="" style={{width:"10%", marginRight:"0.7em"}}/>                        
+                                </a>
+                                <a href="https://www.facebook.com/Bridge-106202354272895/" target="_blank">
+                                    <img src={facebook} alt="" style={{width:"10%", marginRight:"0.7rem"}}/>                        
+                                </a>
+                                <a href="https://www.linkedin.com/company/yourbridge/" target="_blank">
+                                    <img src={linkedin} alt="" style={{width:"10%", marginRight:"0.7rem"}}/>                        
+                                </a>   </div>                         
+                            </div>            
                         </div>
-                        <div className="d-flex flex-space-around">
-                            <img src={socials} alt="" style={{width:"25%", marginRight:"40px"}}/>                        
-                            <a href="#" className="contact-button" style={{alignSelf:"flex-start", marginTop:"30px", marginRight:"40px"}}>Contact Us</a>                            
-                            <div className="flex-column">
-                            <p className="signed-up-text">
-                                Signed Up?
-                            </p>
-                            <a href="#" className="login-button" style={{alignSelf:"flex-start"}}>Log in</a>
-                            </div>
-                            
+                        
+                        <div className="d-flex flex-center">
+                                                   
                         </div>
                     </div>
                 </div>
@@ -128,4 +281,4 @@ class HeaderNav extends React.Component<{}, {}>
 }
 
 
-export default HeaderNav;
+export default SignUp;

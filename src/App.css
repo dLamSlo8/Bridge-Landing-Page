@@ -1,21 +1,99 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap');
-* {
+@import url("https://use.typekit.net/cix3tat.css");
+/* * {
   font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
+} 
 a {
   text-decoration: none;
+} */
+h3 {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 300;
 }
 
-p, li > a {
-  font-weight: 500;
-  color: #6B6B6B;
+:root {
+   --dark-purple: #462489;
+   --middle-purple: #8256D8;
+   --light-purple: #beaeff;
+   --turquoise: #6dc199;
+   --dark-gray: #353535;
+   --light-gray: #5a5a5a;
+}
+
+.flex {
+   display: flex;
+}
+
+a {
+   text-decoration: none;
 }
 
 
+.header-heavy {
+   font-family: mr-eaves-xl-sans, sans-serif;
+   font-style: normal;
+   font-weight: 800;
+}
+
+.header-bold {
+   font-family: mr-eaves-xl-sans, sans-serif;
+   font-style: normal;
+   font-weight: 700;
+}
+
+.body-light {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 300;
+}
+
+.body-bold {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 500;
+}
+
+.body-heavy {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 700;
+}
 h1 {
-  font-weight: 700;
-  color: #454545;
+   font-size: calc(2.5rem + 2vw);
+}
+
+h2 {
+   font-size: calc(1.5rem + 2vw);
+}
+
+h3 {
+   font-size: calc(1rem + 1.5vw);
+}
+
+h4 {
+   font-size: calc(1.25rem + 0.1vw);
+}
+
+p {
+   font-size: calc(1rem + 0.1vw);
+}
+.body-text {
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 500;  
+   color: var(--light-gray);
+}
+
+.land-btn {
+   white-space: nowrap;
+   border-radius: 20px;
+   font-family: museo-sans, sans-serif;
+   font-style: normal;
+   font-weight: 700;  
+   transition: color 0.1s ease-in-out,
+   background-color 0.1s ease-in-out;
+
 }
 
 .App {
@@ -53,7 +131,8 @@ h1 {
 {
   display: flex;
   justify-content: space-between;
-  padding: 25px 125px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .navbar > *
@@ -63,10 +142,28 @@ h1 {
 
 .nav-rest:last-child
 {
-  flex-basis: 17%;
+  flex-basis: 20%;
+}
+
+.navbar > ul > li::after
+{
+  content: "";
+  display: block;
+  width: 0%;
+  padding-top: 5px;
+  border-bottom: 3px solid #6701B2;
+  transition: all 0.25s ease-in-out;
 }
 
 
+.navbar > ul > li:hover::after
+{
+  width: 100%;
+}
+.navbar > ul > li.join:last-child:hover::after
+{
+  width: 0%;
+}
 .image 
 {
    width: 14%;
@@ -92,7 +189,7 @@ h1 {
   padding: 10px;
   border-radius: 10px;
   color: white;
-  background-image: linear-gradient(to left, #9B7FE6,#661AB1);
+  background-image: linear-gradient(to right, #6701B2, #9000FE);
   white-space: nowrap;
   box-shadow: 7px 4px 4px 0px #B8B8B8;
 
@@ -103,7 +200,7 @@ h1 {
 {
   display: flex;
   justify-content: space-between;
-  padding: 50px 125px;
+  /* padding: 20px 125px 0px; */
 }
 
 .bigish-text
@@ -113,10 +210,7 @@ h1 {
 .big-text 
 {
   font-size: 3rem;
-<<<<<<< Updated upstream
-=======
  
->>>>>>> Stashed changes
 }
 
 .bold-text
@@ -134,7 +228,7 @@ span.bigger-text
   background-image: linear-gradient(to right, #8113AA, #786Ac7);
   display: flex;
   justify-content: space-around;
-  padding: 50px 200px;
+  /* padding: 50px 200px; */
 }
 
 .join-us-segment .join-button
@@ -164,6 +258,8 @@ span.bigger-text
 
 .d-flex
 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -209,10 +305,6 @@ span.bigger-text
 .flex-end
 {
   justify-content: flex-end;
-}
-.site-spacing
-{
-  padding: 50px 125px;
 }
 
 /* Whether you're a ... */
@@ -282,4 +374,21 @@ p.submain1
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+}
+
+#features {
+  flex-wrap: nowrap;
+}
+
+#features > * {
+  flex-basis: 25%;
+}
+
+@media screen and (max-width: 1200px) {
+  #features {
+    flex-wrap: wrap;
+  }
+  #features > * {
+    flex-basis: calc(50% - 10vw);
+  }
 }

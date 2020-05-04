@@ -1,0 +1,122 @@
+
+.land-header {
+   display: flex;
+   justify-content: space-between;
+   padding: 0.5em;
+}
+
+
+.land-logo {
+   width: 15em;
+}
+@media screen and (max-width: 480px) {
+   .land-header {
+      padding: 1em 1em 1em 0.25em;
+   }
+   .land-logo {
+      width: 10em;
+   }
+}
+.professional-platform {
+   font-size: calc(1.25rem + 0.75vw);
+   padding-left: 15rem;
+   padding-right: 15rem;
+}
+
+@media screen and (max-width: 980px) {
+   .professional-platform {
+      padding-left: 10rem;
+      padding-right: 10rem;
+   }
+}
+
+@media screen and (max-width: 840px) {
+   .professional-platform {
+      padding-left: 5rem;
+      padding-right: 5rem;
+   }
+}
+
+@media screen and (max-width: 540px) {
+   .professional-platform {
+      padding-left: 1rem;
+      padding-right: 1rem;
+   }
+}
+.land-header-btn {
+   padding: 5px 20px; 
+   color: var(--middle-purple);
+   border: 2px solid var(--middle-purple);
+}
+
+.land-header-btn:hover {
+   color: white;
+   background-color: var(--middle-purple);
+}
+
+.land-join-btn {
+   padding: 5px 25px;
+   background-color: var(--turquoise);
+   font-size: calc(1rem + 0.5vw);
+}
+
+.land-join-btn:hover {
+   color: var(--turquoise);
+   background-color: white;
+}
+.land-header-section {
+   position: relative;
+
+}
+
+.land-header-section .land-header-images > img {
+   width: 100%;
+   display: block;
+}
+
+.land-overlay {
+   position: absolute;
+   top: 0;
+   right: 0;
+   z-index: 10;
+}
+/* 
+.land-chat-overlay {
+   position: absolute;
+   max-width: 75px;
+   right: 1em;
+   bottom: 1em;
+   z-index: 10;
+   width: 15%;
+} */
+.land-text-overlay {
+   box-sizing: border-box;
+   background-color: var(--middle-purple);
+   height: 100%;
+   width: 100%;
+   padding: 0 1.25em 3em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-end;
+   color: white;
+   text-align: center;
+}
+@media screen and (min-width: 1800px) {
+   .land-text-overlay {
+      justify-content: center;
+   }
+}
+@media screen and (min-width: 880px) {
+   .land-text-overlay {
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      background-color: transparent;
+      padding-bottom: 5em;
+   }
+}
+
+.land-text-overlay > a {
+   color: white;
+}

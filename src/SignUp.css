@@ -1,83 +1,133 @@
+
+.signup-form
+{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 2em;
+}
+
+.signup-form h3 {
+   margin-bottom: 0;
+}
+div.signup-form > div:first-child
+{
+  flex-basis: 35%;
+  margin-right: 5em;
+}
+
+.wireframe
+{
+  display: flex;
+  align-items: center;
+  flex-basis: 45%;
+  padding-top: 2.5em;
+}
+
+div.wireframe > img
+{
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .name-form
 {
   display:flex;
-  padding-bottom: 12px
+}
+
+div.name-form > .name-form-first
+{
+  flex-basis: 50%;
+  margin-right: 1.5rem;
+}
+
+div.name-form > .name-form-last
+{
+  flex-basis: 50%;
 }
 
 .info-form
 {
   display: flex;
-  padding-bottom: 10px;
+}
+
+div.info-form > .info-form-email
+{
+  flex-basis: 50%;
+  margin-right: 1.5rem;  
+}
+
+div.info-form > .info-form-provider 
+{
+  flex-basis: 50%;
 }
 
 .loc-form
 {
   display: flex;
-  padding-bottom: 10px;
+}
+
+div.loc-form > .loc-form-states
+{
+  flex-basis: 50%;
+  margin-right: 1.5rem;
+}
+
+div.loc-form > .loc-form-city
+{
+  flex-basis: 50%;  
+}
+
+.loc-form-other
+{
+   width: 100%;
+   padding: 0.5rem;
+   color: gray;
+}
+
+.loc-form-other-provider
+{
+   display: block;
+   width: 100%;
+   padding: 0.5rem;
+   color: gray;
+}
+div.loc-form > .loc-form-states-label
+{
+   font-size: 0.2rem;
 }
 
 .how-find-form
 {
   display: flex;
-  padding-bottom: 10px;
 }
 
-.name-form-items
-{
-  flex-basis: 50%;
-  padding: 10px;
-}
-
-.info-form-email
-{
-  flex-basis: 70%;
-  padding: 10px;
-}
-
-.info-form-provider
-{
-  flex-basis: 30%;
-  padding: 10px;
-  color: gray;
-}
-
-.loc-form-states
-{
-  flex-basis: 20%;
-  padding: 10px;
-  color: gray;
-}
-
-.loc-form-city
-{
-  flex-basis: 80%;
-  padding: 10px;
-  color: gray;
-}
-
-.how-find-form-dropmenu
+div.how-find-form > .how-find-form-dropmenu
 {
   flex-basis: 100%;
-  padding: 10px;
-  color: gray;
 }
 
 .submit-button
 {
-  font-size: 13px;
-  padding: 12px;
-  border-radius: 13px;
-  padding-left: 30px;
-  padding-right: 30px;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
   color: white;
-  background-image: linear-gradient(to left, #9B7FE6,#661AB1);
-  transition: box-shadow 0.1s ease-in-out;
+  font-weight: bold;
+  background-color: var(--middle-purple);
   white-space: nowrap;
+  border: none;
+}
+
+.submit-button:hover
+{
+   cursor: pointer;
 }
 
 .x-large-text
 {
-  font-size:28.5px; 
+  font-size:2.3rem; 
 }
 
 .bot-bar
@@ -86,10 +136,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  padding-left: 180px;
-  padding-right: 180px;
+  padding: 1.5em;
 }
+
+div.bot-bar > div > img
+{
+  min-width: 15%;
+  min-height: 15%;
+  width: 15%;
+  height: 15%;
+}
+
 
 .contact-button
 {
@@ -101,7 +158,7 @@
   border-style: solid;
   border-color: white;
   font-weight: 650;
-  font-size: 8px;
+  font-size: 12px;
   color: white;
   background-image: #460B8D;
   white-space: nowrap;
@@ -117,14 +174,129 @@
   border-style: solid;
   border-color: white;
   font-weight: 700;
-  font-size: 8px;
+  font-size: 12px;
   color: white;
   background-image: #460B8D;
+  white-space: nowrap;
 }
 
 .signed-up-text
 {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 500;
   color: white;
+}
+
+.form-padding
+{
+  margin-top: 15px
+}
+
+@media screen and (max-width: 990px)
+{
+
+   div.signup-form {
+      flex-direction: column;
+      padding: 0 5em;
+   }
+   div.signup-form > div:first-child
+   {
+      margin-right: 0em;
+   }
+   div.signup-form .submitted-text {
+      text-align: center;
+   }
+   
+}
+
+@media screen and (min-width: 990px)
+{
+   div.signup-form .submitted-text {
+      margin-top: 0;
+   }
+}
+@media screen and (max-width: 640px)
+{
+  div.signup-form > div
+  {
+    margin-right: 0em;    
+    font-size: 0.65rem;  
+  }
+
+  div.signup-form {
+   padding: 0 2em;
+  }
+  
+  div.wireframe
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.bot-bar
+  {
+    padding: 3em; 
+  }
+
+  div.bot-bar > div 
+  {
+     flex-direction: column;
+     align-items: center;         
+  }
+
+  div.bot-bar > div > img
+  {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 400px)
+{
+  div.signup-form
+  {
+    padding: 0 2em;
+  }
+
+  div.name-form
+  {
+    flex-direction: column;    
+  }
+
+  div.name-form > .name-form-first
+  {
+    margin-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  div.info-form
+  {
+    flex-direction: column;
+  }
+
+  div.info-form > .info-form-email
+  {
+    margin-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  div.loc-form
+  {
+    flex-direction: column;
+  }
+
+  div.loc-form > .loc-form-states
+  {
+    margin-right: 0;
+    padding-bottom: 1rem;
+  }
+
+  div.how-find-form
+  {
+    flex-direction: column;
+  }
+
+  div.submit-form 
+  {
+     justify-content: center;
+  }
 }
