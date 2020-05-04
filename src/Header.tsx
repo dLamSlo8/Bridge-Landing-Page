@@ -14,8 +14,11 @@ class Header extends React.Component<{}, {}> {
       return (
          <div>
             <header className="land-header">
-                  <img 
-                  className="land-logo" src={logo} alt="Bridge Logo"/>
+                  <div>
+                     <img 
+                     className="land-logo" src={logo} alt="Bridge Logo"/>
+                  </div>
+
                {/* <nav
                className="flex flex-cross-center">
                   <a 
