@@ -14,8 +14,11 @@ class Header extends React.Component<{}, {}> {
       return (
          <div>
             <header className="land-header">
-                  <img 
-                  className="land-logo" src={logo} alt="Bridge Logo"/>
+                  <div>
+                     <img 
+                     className="land-logo" src={logo} alt="Bridge Logo"/>
+                  </div>
+
                {/* <nav
                className="flex flex-cross-center">
                   <a 
@@ -38,7 +41,8 @@ class Header extends React.Component<{}, {}> {
                   <h1
                   style={{marginBottom: 0}} 
                   className="header-heavy">Consult. Refer. Grow.</h1>
-                  <h4 className="body-heavy professional-platform">The professional networking platform and referral management tool suite for mental healthcare providers</h4>
+                  <h4 className="body-heavy professional-platform">Connecting mental health professionals 
+                  across all license types on a secure referral and messaging platform</h4>
                   <a 
                   className="land-btn land-join-btn"
                   href="#signup"

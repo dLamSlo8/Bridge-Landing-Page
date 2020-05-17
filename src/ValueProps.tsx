@@ -20,7 +20,7 @@ class ValueProps extends React.Component<{}, {}>
                         <h3 className="header-bold">
                             Consult with your colleagues</h3>
                         <p className="body-text value-prop-para">
-                            Stay up to date with your colleagues and discover new professional connections.
+                           Stay up-to-date with your colleagues’ offerings and discover new professional resources.
                         </p>                                                                
                     </div>                    
                     <img src={collaborate} alt=""></img>                
@@ -32,7 +32,8 @@ class ValueProps extends React.Component<{}, {}>
                            Set your availability
                         </h3>
                         <p className="body-text value-prop-para">
-                            Notify your colleagues whether or not you are accepting new clients.
+                           Notify your connections whether or not you are accepting new clients and quickly 
+                           determine which colleagues are available.
                         </p>                                                                
                     </div>            
                 </div>
