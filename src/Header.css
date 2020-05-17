@@ -5,9 +5,8 @@
    padding: 0.5em;
 }
 
-
 .land-logo {
-   width: 15em;
+   width: 12em;
 }
 @media screen and (max-width: 480px) {
    .land-header {

@@ -258,13 +258,13 @@ class SignUp extends React.Component<{}, {submitted: boolean,
                                     Follow Us
                                 </span><br></br>
                                 <div style={{marginLeft: "0.8em"}}>
-                                <a href="https://www.instagram.com/yourbridge.io/" target="_blank">
+                                <a href="https://www.instagram.com/bridgementalhealth/" target="_blank">
                                     <img src={instagram} alt="" style={{width:"10%", marginRight:"0.7em"}}/>                        
                                 </a>
                                 <a href="https://www.facebook.com/Bridge-106202354272895/" target="_blank">
                                     <img src={facebook} alt="" style={{width:"10%", marginRight:"0.7rem"}}/>                        
                                 </a>
-                                <a href="https://www.linkedin.com/company/yourbridge/" target="_blank">
+                                <a href="https://www.linkedin.com/company/bridgemh/" target="_blank">
                                     <img src={linkedin} alt="" style={{width:"10%", marginRight:"0.7rem"}}/>                        
                                 </a>   </div>                         
                             </div>            
